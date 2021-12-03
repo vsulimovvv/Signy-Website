@@ -1,0 +1,39 @@
+// Color 
+:root {
+  // * ==== Color
+  --color-black: #000;
+  --color-white: #fff;
+
+  --color-dark: #061224;
+  --color-gray: #061224;
+  --color-blue: #1064E5; // rgb(16, 100, 229)
+  --color-blue-dark: #0046B0;
+  --color-blue-light: #DEEEFC;
+  --color-red: #B70101;
+  --color-green: #01B754;
+
+  // * ==== Backgroudn & Gradient
+  --color-background: #D8F1F0;
+  --color-gradient: linear-gradient(293.97deg, #FFFFFF -9.96%, rgba(255, 255, 255, 0) 111.88%);
+
+
+}
+
+// * breakpointsMaxW
+$bp-container: 1260px;
+$bp-991: 991px;
+$bp-768: 768px;
+$bp-650: 650px;
+$bp-576: 576px;
+$bp-420: 420px;
+
+// *=== Fonts
+$IBMPlexSans: 'IBM Plex Sans';
+$IBMPlexSerif: 'IBM Plex Serif';
+$Stolzl: 'Stolzl';
+
+// * ==== Z-Index
+$z-1: 1;
+$z-5: 5;
+$z-10: 10;
+$z-100: 100;

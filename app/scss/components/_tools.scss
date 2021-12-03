@@ -1,0 +1,9 @@
+.tools {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  @include breakpointsMaxW($bp-container) {
+    gap: 12px;
+  }
+}

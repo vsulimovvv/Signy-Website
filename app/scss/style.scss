@@ -1,0 +1,52 @@
+@import 'libs';
+@import 'reset';
+@import 'vars';
+@import 'mixins';
+@import 'fonts';
+@import 'global';
+
+// * ==== Cards
+@import './components/cards/news-card';
+@import './components/cards/single-blog-card';
+@import './components/cards/blog-card';
+@import './components/cards/digital-signature-card';
+@import './components/cards/video-card';
+
+// * ==== Sections and Other
+@import './animations';
+@import './components/header.scss';
+@import './components/footer';
+@import './components/menu';
+@import './components/tools';
+@import './components/footer-menu';
+@import './components/contacts';
+@import './components/hero';
+@import './components/section-advantages';
+@import './components/section-about';
+@import './components/section-digital-signature';
+@import './components/section-number';
+@import './components/section-partners';
+@import './components/section-subscribe';
+@import './components/form';
+@import './components/section-faqs';
+@import './components/accordion';
+@import './components/section-video';
+@import './components/section-news';
+@import './components/section-contacts';
+@import './components/form-submit';
+@import './components/page-faqs';
+@import './components/box-faqs';
+@import './components/section-form-submit';
+@import './components/tags';
+@import './components/section-single-blog';
+@import './components/section-blog-grid';
+@import './components/pagination';
+@import './components/section-text';
+@import './components/section-interesting';
+@import './components/section-video-grid';
+@import './components/page-about';
+@import './components/quote';
+@import './components/section-text-signature';
+@import './components/popup';
+@import './components/section-blog-post';
+@import './components/socials';

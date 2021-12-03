@@ -1,0 +1,19 @@
+.faqs {
+  padding-top: 26px;
+  padding-bottom: 30px;
+  background-color: var(--color-blue-light);
+
+  &__title {
+    text-align: center;
+    margin-bottom: 43px;
+
+    @include breakpointsMaxW($bp-768) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__accordions {
+    max-width: 530px;
+    margin: 0 auto;
+  }
+}

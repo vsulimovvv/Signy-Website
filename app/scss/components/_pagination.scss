@@ -1,0 +1,28 @@
+.pagination {
+  max-width: 325px;
+  margin: 0 auto;
+
+  &__list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.155em;
+    text-transform: uppercase;
+    transition: 150ms ease;
+
+    &:hover {
+      color: var(--color-blue);
+    }
+
+    &--active {
+      color: var(--color-blue);
+    }
+  }
+}

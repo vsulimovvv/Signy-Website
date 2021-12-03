@@ -1,0 +1,30 @@
+.tags {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #E5E5E5;
+    border-radius: 23px;
+    padding: 0 14px;
+    height: 24px;
+    transition: 150ms ease;
+
+    &:hover {
+      background-color: var(--color-blue);
+      color: var(--color-white);
+    }
+  }
+}

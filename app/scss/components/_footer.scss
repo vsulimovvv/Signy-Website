@@ -1,0 +1,69 @@
+.footer {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  padding: 64px 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+
+  &__top {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 157px;
+    margin-bottom: 16px;
+
+    @include breakpointsMaxW($bp-container) {
+      justify-content: space-between;
+      gap: calc(52px + (157 - 52) * ((100vw - 768px) / (1260 - 768)));
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__right {
+    display: grid;
+    grid-template-columns: minmax(auto, 230px) 1fr;
+    gap: 30px;
+
+    @include breakpointsMaxW($bp-576) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__logo {}
+
+  &__contacts {
+    margin-left: auto;
+  }
+
+  &__bottom {
+    max-width: 550px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100px 240px;
+    gap: 185px;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 12px;
+    line-height: 24px;
+
+    @include breakpointsMaxW($bp-container) {
+      gap: calc(88px + (185 - 88) * ((100vw - 768px) / (1260 - 768)));
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__confidentiality {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+
+    @include breakpointsMaxW($bp-576) {
+      order: -1;
+    }
+  }
+}

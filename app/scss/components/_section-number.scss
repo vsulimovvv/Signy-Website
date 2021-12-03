@@ -1,0 +1,40 @@
+.number-docs {
+  padding-top: 38px;
+  padding-bottom: 43px;
+  text-align: center;
+  background-color: var(--color-background);
+
+  &__wrapper {
+    max-width: 490px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 73px;
+    line-height: 1;
+    margin-bottom: 8px;
+
+    @include breakpointsMaxW($bp-container) {
+      font-size: calc(36px + (73 - 36) * ((100vw - 320px) / (1260 - 320)));
+      margin-bottom: calc(9px + (22 - 9) * ((100vw - 320px) / (1260 - 320)));
+    }
+  }
+
+  &__subtitle {
+    font-family: $IBMPlexSerif;
+    display: inline-block;
+    font-size: 40px;
+    line-height: 48px;
+    margin-bottom: 16px;
+
+    @include breakpointsMaxW($bp-container) {
+      font-size: calc(20px + (40 - 20) * ((100vw - 320px) / (1260 - 320)));
+      line-height: calc(22px + (48 - 22) * ((100vw - 320px) / (1260 - 320)));
+    }
+  }
+  &__text{
+    line-height: 28px;
+  }
+}

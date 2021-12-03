@@ -1,0 +1,35 @@
+.subscribe {
+  padding-top: 56px;
+  padding-bottom: 98px;
+
+  &--background {
+    background-color: var(--color-background);
+    padding-top: 48px;
+    padding-bottom: 54px;
+  }
+
+  &__title,
+  &__text {
+    text-align: center;
+    margin-bottom: 30px;
+
+    @include breakpointsMaxW($bp-container) {
+      margin-bottom: calc(20px + (30 - 20) * ((100vw - 320px) / (1260 - 320)));
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 33px;
+
+    @include breakpointsMaxW($bp-768) {
+      font-size: 14px;
+    }
+  }
+
+  &__form {
+    max-width: 595px;
+    margin: 0 auto;
+    height: 50px;
+  }
+}

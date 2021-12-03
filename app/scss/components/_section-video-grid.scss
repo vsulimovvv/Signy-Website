@@ -1,0 +1,40 @@
+.video-grid {
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 81px;
+
+    @include breakpointsMaxW($bp-container) {
+      gap: calc(20px + (80 - 20) * ((100vw - 768px) / (1260 - 768)));
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      gap: 12px;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    &--big {
+      grid-column: 1/3;
+
+      @include breakpointsMaxW($bp-576) {
+        grid-column: initial;
+      }
+
+      .video-card {
+        &__img {
+          margin-bottom: 0;
+          height: 590px;
+
+          @include breakpointsMaxW($bp-container) {
+            height: calc(213px + (590 - 213) * ((100vw - 320px) / (1260 - 320)));
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+.advantages {
+  padding-top: 45px;
+  padding-bottom: 75px;
+  font-size: 16px;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+
+  &__items {
+    max-width: 985px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 66px;
+
+    @include breakpointsMaxW($bp-991) {
+      gap: 14px;
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+  }
+
+  &__item {
+    padding-left: 80px;
+    position: relative;
+    width: 100%;
+
+    @include breakpointsMaxW($bp-991) {
+      padding-left: 57px;
+    }
+
+    &::before {
+      @include pseudoElDefault();
+      width: 60px;
+      height: 60px;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      background-color: var(--color-blue);
+
+      @include breakpointsMaxW($bp-991) {
+        width: 42px;
+        height: 42px;
+      }
+    }
+
+    &:nth-child(1) {
+      &::before {
+        @include maskImage(url('../images/sprite.svg#quickly'), contain);
+      }
+    }
+
+    &:nth-child(2) {
+      &::before {
+        @include maskImage(url('../images/sprite.svg#global'), contain);
+      }
+    }
+
+    &:nth-child(3) {
+      &::before {
+        @include maskImage(url('../images/sprite.svg#econom'), contain);
+      }
+    }
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1;
+    margin-bottom: 20px;
+
+    @include breakpointsMaxW($bp-991) {
+      margin-bottom: 5px;
+    }
+  }
+}

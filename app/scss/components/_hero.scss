@@ -1,0 +1,119 @@
+.hero {
+  // padding-top: 192px;
+
+  width: 100%;
+
+  font-size: 16px;
+  line-height: 1.3;
+  z-index: 1;
+  height: 676px;
+
+  @include breakpointsMaxW($bp-container) {
+    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1260 - 320)));
+  }
+
+  &__wrapper {
+    padding-top: 185px;
+    padding-left: 15px;
+    // height: calc(100vh - 192px);
+    height: 676px;
+    background: #D8F1F0 url('../images/content/hero-slider/2.jpg') no-repeat center/cover;
+  }
+
+  @include breakpointsMaxW($bp-991) {
+    background-position-x: 75%;
+  }
+
+  @include breakpointsMaxW($bp-768) {}
+
+  &__title {
+    line-height: 45px;
+    margin-bottom: 22px;
+
+    @include breakpointsMaxW($bp-768) {
+      line-height: 1;
+    }
+  }
+
+  &__slider {
+    height: 100%;
+  }
+
+  &__offer {
+    max-width: 580px;
+
+    @include breakpointsMaxW($bp-991) {
+      max-width: calc(223px + (580 - 223) * ((100vw - 320px) / (1260 - 320)));
+
+    }
+
+    // @include breakpointsMaxW($bp-576) {
+    //   font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (1260 - 320)));
+    //   line-height: 1;
+    // }
+  }
+
+  &__name {
+    display: inline-block;
+    margin-bottom: 14px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1;
+
+    @include breakpointsMaxW($bp-container) {
+      font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (1260 - 320)));
+      line-height: 1;
+      margin-bottom: calc(8px + (14 - 8) * ((100vw - 320px) / (1260 - 320)));
+    }
+  }
+
+  &__text {
+    letter-spacing: 0.04em;
+    margin-bottom: 31px;
+  }
+
+  &__btn {
+    max-width: 295px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0.04em;
+  }
+
+  &__numbers {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 24px;
+  }
+
+  &__number {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: 0.04em;
+    opacity: 0.6;
+    position: relative;
+
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+
+    &::after {
+      @include pseudoElDefault();
+      width: 18px;
+      height: 2px;
+      background-color: var(--color-blue);
+      top: 50%;
+      transform: translateY(-50%);
+      right: -38px;
+    }
+
+    &--active {
+      opacity: 1;
+    }
+  }
+}

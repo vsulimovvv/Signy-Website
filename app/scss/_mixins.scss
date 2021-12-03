@@ -1,0 +1,97 @@
+@mixin breakpointsMaxW($bp) {
+  @media (max-width: $bp) {
+    @content;
+  }
+}
+
+@mixin breakpointsMinW($bp) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}
+
+@mixin breakpointsMaxH($bp) {
+  @media (max-height: $bp) and (orientation: landscape) {
+    @content;
+  }
+}
+
+
+//  margin-bottom: calc(28px + (36 - 28) * ((100vw - 320px) / (1260 - 320)));
+
+@mixin afterIcon($image, $w, $h) {
+  background-image: $image;
+  width: $w;
+  height: $h;
+}
+
+@mixin background($size) {
+  background: {
+    repeat: no-repeat;
+    position: center;
+    size: $size;
+  }
+}
+
+@mixin img($size) {
+  width: 100%;
+  height: 100%;
+  object-fit: $size;
+}
+
+@mixin backgroundImage($image, $size) {
+  background: {
+    image: $image;
+    repeat: no-repeat;
+    position: center;
+    size: $size;
+  }
+}
+
+@mixin maskImage($image, $size) {
+  mask: $image no-repeat center/$size;
+}
+
+@mixin pseudoElDefault() {
+  position: absolute;
+  content: '';
+}
+
+@mixin line-clamp($lines: 1) {
+  @if $lines <=1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  @else {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+  }
+}
+
+@mixin afterBeforeForImage() {
+
+  &::after,
+  &::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transition: 250ms ease;
+  }
+
+  &::after {
+    background: linear-gradient(293.97deg, #FFFFFF -9.96%, rgba(255, 255, 255, 0) 111.88%);
+  }
+
+  &::before {
+    background-color: rgba(16, 100, 229, 0.2);
+  }
+}
+

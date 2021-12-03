@@ -1,0 +1,26 @@
+.partners {
+  padding-top: 46px;
+  padding-bottom: 42px;
+
+  &__title {
+    margin-bottom: 35px;
+    text-align: center;
+  }
+
+  &__slider {
+    height: 172px;
+
+    .swiper-wrapper {
+      height: 120px;
+    }
+
+    .swiper-slide {
+      height: 120px;
+
+
+      img {
+        @include img(contain);
+      }
+    }
+  }
+}

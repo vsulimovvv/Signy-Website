@@ -1,0 +1,65 @@
+.accordion {
+  &:not(:last-child) {
+    margin-bottom: 14px;
+  }
+
+  &.active {
+    .accordion__cotnent {
+      opacity: 1;
+    }
+
+    .accordion__control {
+      &::before {
+        @include maskImage(url('../images/icons/minus.svg'), contain);
+      }
+
+      font-weight: 500;
+    }
+  }
+
+  &__control {
+    padding-left: 35px;
+    position: relative;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+
+    margin-bottom: 6px;
+
+    h2 {
+      font-weight: 400;
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      font-size: 14px;
+    }
+
+    &::before {
+      @include pseudoElDefault();
+      width: 11px;
+      height: 11px;
+      top: 6px;
+      left: 3px;
+      @include maskImage(url('../images/icons/plus.svg'), cover);
+      background-color: var(--color-blue-dark);
+      transition: 150ms ease;
+    }
+  }
+
+  &__content {
+    padding-left: 32px;
+    font-size: 18px;
+    line-height: 22px;
+
+    max-height: 0;
+    overflow: hidden;
+    will-change: max-height;
+    transition: 300ms ease-in;
+    z-index: 9;
+
+    @include breakpointsMaxW($bp-768) {
+      font-size: 14px;
+    }
+  }
+}

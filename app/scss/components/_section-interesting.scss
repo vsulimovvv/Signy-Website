@@ -1,0 +1,39 @@
+.interesting {
+  padding-top: 48px;
+  padding-bottom: 48px;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 48px;
+
+    @include breakpointsMaxW($bp-container) {
+      margin-bottom: calc(32px + (48 - 32) * ((100vw - 320px) / (1260 - 320)));
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+
+    @include breakpointsMaxW($bp-container) {
+      gap: calc(10px + (60 - 10) * ((100vw - 320px) / (1260 - 320)));
+    }
+
+    @include breakpointsMaxW($bp-991) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      margin-bottom: 40px;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    justify-self: center;
+  }
+}

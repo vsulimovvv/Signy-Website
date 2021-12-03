@@ -1,0 +1,65 @@
+.quote {
+  max-width: 1060px;
+
+  &:hover {
+
+    .quote__img {
+
+      &::after,
+      &::before {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: minmax(auto, 530px) 1fr;
+    gap: 115px;
+    align-items: center;
+
+    @include breakpointsMaxW($bp-991) {
+      gap: calc(20px + (115 - 20) * ((100vw - 768px) / (1260 - 768)));
+      grid-template-columns: 1.5fr 1fr;
+    }
+
+    @include breakpointsMaxW($bp-768 - 1px) {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+
+  &__img {
+    max-width: 100%;
+    height: 405px;
+    position: relative;
+
+    @include afterBeforeForImage();
+
+    @include breakpointsMaxW($bp-768 - 1px) {
+      height: calc(115px + (405 - 115) * ((100vw - 320px) / (1260 - 320)));
+    }
+
+    img {
+      @include img(cover);
+    }
+
+
+  }
+
+  &__text {
+    margin-bottom: 24px;
+  }
+
+  &__author {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+  }
+
+  cite {
+    font-weight: 500;
+    text-align: right;
+  }
+}

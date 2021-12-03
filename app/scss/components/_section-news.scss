@@ -1,0 +1,26 @@
+.news {
+  padding-top: 38px;
+  padding-bottom: 44px;
+  background-color: var(--color-background);
+
+  &__title {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 54px;
+
+    @include breakpointsMaxW($bp-991) {
+      gap: 35px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      gap: 35px;
+      grid-template-columns: 1fr;
+    }
+  }
+}

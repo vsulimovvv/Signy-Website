@@ -1,0 +1,37 @@
+.footer-menu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 63px;
+
+  @include breakpointsMaxW($bp-container) {
+    gap: calc(49px + (63 - 49) * ((100vw - 320px) / (1260 - 320)));
+  }
+
+  @include breakpointsMaxW($bp-991) {
+    grid-template-columns: 1fr;
+
+    .mt30 {
+      margin-top: 0;
+    }
+  }
+
+  @include breakpointsMaxW($bp-576) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__list {
+    @include breakpointsMaxW($bp-991) {
+      .mt30 {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__link {
+    transition: 150ms ease;
+
+    &:hover {
+      transform: translateX(-5px);
+    }
+  }
+}

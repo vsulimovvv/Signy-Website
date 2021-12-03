@@ -1,0 +1,81 @@
+.single-blog-card {
+  display: grid;
+  grid-template-columns: minmax(auto, 730px) minmax(auto, 455px);
+  gap: 43px;
+
+  @include breakpointsMaxW($bp-container) {
+    gap: calc(6px + (43 - 6) * ((100vw - 320px) / (1260 - 320)));
+  }
+
+  @include breakpointsMaxW($bp-991) {
+    grid-template-columns: 1fr;
+  }
+
+  &__img {
+    max-width: 100%;
+    height: 422px;
+
+    @include breakpointsMaxW($bp-container) {
+      height: calc(160px + (422 - 160) * ((100vw - 320px) / (1260 - 320)));
+    }
+
+    img {
+      @include img(cover)
+    }
+  }
+
+  &__info {}
+
+  &__date {
+    margin-bottom: 7px;
+  }
+
+  &__title {
+    font-family: $IBMPlexSans;
+    margin-bottom: 17px;
+    max-width: 375px;
+    line-height: 42px;
+
+    @include breakpointsMaxW($bp-container) {
+      margin-bottom: calc(8px + (20 - 8) * ((100vw - 320px) / (1260 - 320)));
+    }
+  }
+
+  &__tags {
+    margin-bottom: 14px;
+
+    @include breakpointsMaxW($bp-container) {
+      margin-bottom: calc(8px + (14 - 8) * ((100vw - 320px) / (1260 - 320)));
+    }
+  }
+
+  &__text {
+    margin-bottom: 15px;
+    line-height: 1.45;
+
+    @include breakpointsMaxW($bp-991) {
+      font-size: 16px;
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      font-size: 14px;
+    }
+  }
+
+  &__btn {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.155em;
+    text-transform: uppercase;
+    transition: 150ms ease;
+
+    &:hover {
+      color: var(--color-blue);
+    }
+
+    @include breakpointsMaxW($bp-991) {
+      display: none;
+    }
+  }
+}

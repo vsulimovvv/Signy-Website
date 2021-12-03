@@ -1,0 +1,37 @@
+.contacts {
+  max-width: 472px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 98px;
+
+  @include breakpointsMaxW($bp-container) {
+    gap: calc(36px + (98 - 36) * ((100vw - 768px) / (1260 - 768)));
+  }
+
+  @include breakpointsMaxW($bp-991) {
+    grid-template-columns: 1fr;
+  }
+
+  &__address {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  address {
+    margin-bottom: 6px;
+  }
+
+  &__phones {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+
+
+    a {
+      &:not(:last-child) {
+        margin-bottom: 6px;
+      }
+    }
+  }
+}
