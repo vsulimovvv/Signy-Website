@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  @include('./components/base/_meta.html')
+  @include('./components/base/_links.html')
+
+  <title>Title</title>
+</head>
+
+<body>
+  <div class="site-wrapper">
+    @include('./components/_header.html')
+    <main class="main">
+      @include('./components/_hero.html')
+      @include('./components/_section-advantages.html')
+      @include('./components/_section-about.html')
+      @include('./components/_section-digital-signature.html')
+      @include('./components/_section-number.html')
+      @include('./components/_section-partners.html')
+      @include('./components/_section-news.html')
+      @include('./components/_section-video.html')
+      @include('./components/_section-faqs.html')
+      @include('./components/_section-subscribe.html')
+    </main>
+    @include('./components/_footer.html')
+  </div>
+
+  @include('./components/base/_scripts.html')
+</body>
+
+</html>
