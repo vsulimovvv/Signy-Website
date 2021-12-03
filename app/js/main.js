@@ -51,26 +51,28 @@ window.addEventListener('DOMContentLoaded', () => {
     },
   });
 
-  const toggleAccordion = (accordion, accordionContent) => {
-    const filters = document.querySelectorAll(accordion);
+  const toggleAccordion = (accordionControl, accordionContent, accordion) => {
+    const filters = document.querySelectorAll(accordionControl);
 
     filters.forEach(el => {
       el.addEventListener('click', e => {
-        const target = e.currentTarget;
+        const target = e.target.closest(accordion);
         const content = target.querySelector(accordionContent);
 
         target.classList.toggle('active');
 
         if (target.classList.contains('active')) {
           content.style.maxHeight = content.scrollHeight + 'px';
+          // content.style.maxHeight = `${400}px`;
         } else {
           content.style.maxHeight = null;
         }
       });
     });
   };
-  toggleAccordion('.accordion', '.accordion__content');
-  toggleAccordion('.faqs-box', '.faqs-box__content');
+
+  toggleAccordion('.faqs-box__top', '.faqs-box__content', '.faqs-box');
+  toggleAccordion('.accordion__control', '.accordion__content', '.accordion');
 
   function mixer() {
     const mixContent = document.querySelector('.blog-grid__list');
@@ -101,7 +103,7 @@ window.addEventListener('DOMContentLoaded', () => {
   showMore();
 
   //  Modal
-  const modalsSlider = () => {
+  const modals = () => {
     function bindModal(openBtn, modal, close) {
       const openBtnEl = document.querySelector(openBtn);
       const modalEl = document.querySelector(modal);
@@ -110,7 +112,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       if (modalEl) {
         openBtnEl.addEventListener('click', e => {
-          
+
           if (e.target) {
             e.preventDefault()
           }
@@ -137,5 +139,5 @@ window.addEventListener('DOMContentLoaded', () => {
     bindModal('.page-about__preview', '.popup--form', '.popup__close');
     bindModal('.quote__img', '.popup--thanks', '.popup__close');
   };
-  modalsSlider();
+  modals();
 });

@@ -1,23 +1,48 @@
 .faqs-box {
+  position: relative;
+  height: auto;
+
   &.active {
     .faqs-box__content {
       opacity: 1;
+      height: auto;
     }
 
-    .faqs-box__top {
+    .faqs-box__overlay {
+      // opacity: 0;
+      // visibility: hidden;
+    }
+
+    .accordion__content {
+      margin-bottom: 18px;
+    }
+
+    .faqs-box__button {
       &::before {
         @include maskImage(url('../images/icons/minus.svg'), contain);
       }
     }
   }
 
-  &__top {
-    cursor: pointer;
+  &__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 150ms ease;
+    transition-delay: 350ms;
   }
 
   &__top {
+    cursor: pointer;
     display: inline-block;
     margin-bottom: 24px;
+  }
+
+  &__button {
+    display: block;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
     padding-right: 30px;
     position: relative;
 
@@ -25,11 +50,11 @@
       @include pseudoElDefault();
       width: 11px;
       height: 11px;
-      top: 50%;
-      right: 0;
+      top: 53%;
+      right: 14px;
       transform: translateY(-50%);
       @include maskImage(url('../images/icons/plus.svg'), contain);
-      background-color: var(--color-dark);
+      background-color: var(--color-blue);
     }
   }
 
@@ -37,7 +62,7 @@
     max-height: 0;
     overflow: hidden;
     will-change: max-height;
-    transition: 300ms ease-in;
+    transition: 450ms ease-in;
     z-index: 9;
   }
 }

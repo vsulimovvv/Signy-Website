@@ -2,7 +2,6 @@
   max-width: 1060px;
 
   &:hover {
-
     .quote__img {
 
       &::after,
@@ -16,7 +15,7 @@
   &__wrapper {
     display: grid;
     grid-template-columns: minmax(auto, 530px) 1fr;
-    gap: 115px;
+    gap: 120px;
     align-items: center;
 
     @include breakpointsMaxW($bp-991) {
@@ -44,18 +43,20 @@
     img {
       @include img(cover);
     }
-
-
   }
 
   &__text {
-    margin-bottom: 24px;
+    margin-bottom: 30px;
+    margin-top: -15px;
+    line-height: 26px;
   }
 
   &__author {
     text-align: right;
     display: flex;
     flex-direction: column;
+    padding-right: 17px;
+    line-height: 1.45;
   }
 
   cite {

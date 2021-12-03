@@ -4,7 +4,7 @@
 
   &__label {
     display: block;
-    margin-bottom: 13px;
+    margin-bottom: 3px;
     padding-left: 21px;
   }
 
@@ -15,7 +15,7 @@
     align-items: flex-start;
 
     &:not(:last-child) {
-      margin-bottom: 22px;
+      margin-bottom: 18px;
 
       @include breakpointsMaxW($bp-768) {
         margin-bottom: 12px;
@@ -36,11 +36,13 @@
 
     &--textarea {
       border-radius: 8px;
-      min-height: 138px;
+      min-height: 140px;
+      margin-bottom: 10px;
     }
   }
 
   &__btn {
+    padding: 10px 65px;
     font-weight: bold;
     font-size: 14px;
     line-height: 24px;

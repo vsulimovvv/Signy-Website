@@ -27,7 +27,7 @@
 
     margin-bottom: 6px;
 
-    h2 {
+    h3 {
       font-weight: 400;
     }
 
@@ -55,7 +55,7 @@
     max-height: 0;
     overflow: hidden;
     will-change: max-height;
-    transition: 300ms ease-in;
+    transition: 450ms ease-in;
     z-index: 9;
 
     @include breakpointsMaxW($bp-768) {

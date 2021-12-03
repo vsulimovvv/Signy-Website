@@ -107,6 +107,11 @@ body {
   width: 130px;
   height: 40px;
 
+  @include breakpointsMaxW($bp-576) {
+    width: 92px;
+    height: 28px;
+  }
+
   img {
     @include img(contain);
   }
@@ -117,13 +122,20 @@ body {
 }
 
 .swiper-pagination {
-  bottom: 30px;
+  bottom: 30px !important;
+
+  // bottom: 30px;
+  @include breakpointsMaxW($bp-991) {
+    bottom: 10px !important;
+  }
+
   .swiper-pagination-bullet {
     border: 2px solid var(--color-blue);
     background-color: transparent;
     width: 10px;
     height: 10px;
-    &:not(:last-child){
+
+    &:not(:last-child) {
       margin-right: 25px;
     }
 

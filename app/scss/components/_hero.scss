@@ -1,23 +1,44 @@
 .hero {
-  // padding-top: 192px;
-
   width: 100%;
-
   font-size: 16px;
   line-height: 1.3;
   z-index: 1;
-  height: 676px;
+  max-height: 676px;
 
   @include breakpointsMaxW($bp-container) {
     font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1260 - 320)));
   }
 
   &__wrapper {
+    width: 100%;
+    min-width: 0;
     padding-top: 185px;
+    padding-bottom: 140px;
     padding-left: 15px;
-    // height: calc(100vh - 192px);
-    height: 676px;
-    background: #D8F1F0 url('../images/content/hero-slider/2.jpg') no-repeat center/cover;
+    background-color: #DEEEFC;
+    background-image: url('../images/content/hero-slider/2.jpg');
+    background-repeat: no-repeat;
+    background-position: 60% center;
+    background-size: contain;
+
+    @include breakpointsMaxW($bp-container) {
+      background-position: 215% center;
+    }
+
+    @include breakpointsMaxW($bp-991) {
+      background-size: cover;
+      background-position: 73% 10%;
+      padding-top: 130px;
+      padding-bottom: 70px;
+      padding-left: 0;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      background-size: 230%;
+      background-position: 63% 26%;
+      padding-top: 102px;
+      padding-bottom: 55px;
+    }
   }
 
   @include breakpointsMaxW($bp-991) {
@@ -30,8 +51,22 @@
     line-height: 45px;
     margin-bottom: 22px;
 
-    @include breakpointsMaxW($bp-768) {
-      line-height: 1;
+    @include breakpointsMaxW($bp-991) {
+      font-weight: 500;
+      font-size: 36px;
+      line-height: 45px;
+
+      margin-bottom: 40px;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      font-size: 25px;
+      line-height: 26px;
+      margin-bottom: 27px;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      max-width: 225px;
     }
   }
 
@@ -43,14 +78,12 @@
     max-width: 580px;
 
     @include breakpointsMaxW($bp-991) {
-      max-width: calc(223px + (580 - 223) * ((100vw - 320px) / (1260 - 320)));
-
+      max-width: 345px;
     }
 
-    // @include breakpointsMaxW($bp-576) {
-    //   font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (1260 - 320)));
-    //   line-height: 1;
-    // }
+    @include breakpointsMaxW($bp-576) {
+      max-width: 100%;
+    }
   }
 
   &__name {
@@ -60,16 +93,35 @@
     font-size: 24px;
     line-height: 1;
 
+    @include breakpointsMaxW($bp-576) {
+      max-width: 225px;
+    }
+
     @include breakpointsMaxW($bp-container) {
-      font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (1260 - 320)));
       line-height: 1;
-      margin-bottom: calc(8px + (14 - 8) * ((100vw - 320px) / (1260 - 320)));
+    }
+
+    @include breakpointsMaxW($bp-991) {
+      margin-bottom: 27px;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      font-size: 18px;
+      margin-bottom: 9px;
     }
   }
 
   &__text {
     letter-spacing: 0.04em;
     margin-bottom: 31px;
+
+    @include breakpointsMaxW($bp-991) {
+      margin-bottom: 36px;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      max-width: 225px;
+    }
   }
 
   &__btn {
@@ -79,6 +131,13 @@
     font-size: 16px;
     line-height: 130%;
     letter-spacing: 0.04em;
+
+    @include breakpointsMaxW($bp-576) {
+      font-size: 12px;
+      letter-spacing: 0;
+      padding: 12px 35px;
+      margin: 0 auto;
+    }
   }
 
   &__numbers {
@@ -86,6 +145,14 @@
     align-items: center;
     gap: 50px;
     margin-bottom: 24px;
+
+    @include breakpointsMaxW($bp-991) {
+      margin-bottom: 12px;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      gap: 37px;
+    }
   }
 
   &__number {
@@ -110,10 +177,20 @@
       top: 50%;
       transform: translateY(-50%);
       right: -38px;
+
+      @include breakpointsMaxW($bp-576) {
+        right: -28px;
+      }
     }
 
     &--active {
       opacity: 1;
+    }
+  }
+
+  .swiper {
+    .swiper-wrapper {
+      height: 100%;
     }
   }
 }

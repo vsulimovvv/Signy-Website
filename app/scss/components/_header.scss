@@ -35,6 +35,11 @@
       align-items: center;
       transition: 350ms ease-in;
 
+      @include breakpointsMaxW($bp-576) {
+        width: 18px;
+        height: 14px;
+      }
+
       &-line {
         border-radius: 3px;
         width: 100%;
@@ -42,6 +47,10 @@
         background-color: var(--color-blue);
         position: relative;
         transition: 150ms ease-in;
+
+        @include breakpointsMaxW($bp-576) {
+          height: 2px;
+        }
 
         &::after,
         &::before {
@@ -58,10 +67,18 @@
 
         &::after {
           top: -12px;
+
+          @include breakpointsMaxW($bp-576) {
+            top: -6px;
+          }
         }
 
         &::before {
           bottom: -12px;
+
+          @include breakpointsMaxW($bp-576) {
+            bottom: -6px;
+          }
         }
       }
 

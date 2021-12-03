@@ -9,8 +9,10 @@
     }
 
     p {
+      line-height: 26px;
+
       &:not(:last-child) {
-        margin-bottom: 30px;
+        margin-bottom: 25px;
       }
     }
   }
@@ -42,7 +44,8 @@
   }
 
   &__quote {
-    margin-bottom: 24px;
+    margin: 0 auto;
+    margin-bottom: 44px;
   }
 
   &__signature {
@@ -50,7 +53,7 @@
     text-align: center;
     margin: 0 auto;
     margin-top: 24px;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
 
     img {
       @include img(contain)
