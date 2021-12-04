@@ -2,19 +2,45 @@
   padding-top: 56px;
   padding-bottom: 98px;
 
+  @include breakpointsMaxW($bp-991) {
+    padding-top: 28px;
+    padding-bottom: 44px;
+  }
+
+  @include breakpointsMaxW($bp-576) {
+    padding-top: 9px;
+    padding-bottom: 44px;
+  }
+
   &--background {
     background-color: var(--color-background);
     padding-top: 48px;
     padding-bottom: 54px;
+
+    @include breakpointsMaxW($bp-768) {
+      padding-top: 27px;
+      padding-bottom: 40px;
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      padding-top: 27px;
+      padding-bottom: 19px;
+    }
   }
 
   &__title,
   &__text {
     text-align: center;
     margin-bottom: 30px;
+  }
 
-    @include breakpointsMaxW($bp-container) {
-      margin-bottom: calc(20px + (30 - 20) * ((100vw - 320px) / (1260 - 320)));
+  &__title {
+    @include breakpointsMaxW($bp-768) {
+      margin-bottom: 26px;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      margin-bottom: 9px;
     }
   }
 
@@ -23,7 +49,14 @@
     line-height: 33px;
 
     @include breakpointsMaxW($bp-768) {
+      font-size: 16px;
+      line-height: 23px;
+      margin-bottom: 38px;
+    }
+
+    @include breakpointsMaxW($bp-576) {
       font-size: 14px;
+      margin-bottom: 19px;
     }
   }
 

@@ -1,6 +1,10 @@
 .about {
   padding: 55px 0 93px;
-  background-color: var(--color-backdround);
+  background-color: var(--color-background);
+
+  @include breakpointsMaxW($bp-991) {
+    padding-top: 47px;
+  }
 
   &__title {
     margin-bottom: 22px;
@@ -38,6 +42,7 @@
       .about__list {
         margin-bottom: 40px;
       }
+
       .about__btn {
         padding: 12px 27px;
       }

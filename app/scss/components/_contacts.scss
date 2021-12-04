@@ -13,6 +13,16 @@
     grid-template-columns: 1fr;
   }
 
+  &__mail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include breakpointsMaxW($bp-991) {
+      gap: 30px;
+    }
+  }
+
   &__address {
     color: rgba(255, 255, 255, 0.8);
   }
@@ -25,8 +35,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
-
 
     a {
       &:not(:last-child) {

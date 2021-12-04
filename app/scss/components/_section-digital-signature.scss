@@ -2,6 +2,14 @@
   padding-top: 55px;
   padding-bottom: 98px;
 
+  @include breakpointsMaxW($bp-991) {
+    padding-bottom: 45px;
+  }
+
+  @include breakpointsMaxW($bp-991) {
+    padding-top: 50px;
+  }
+
   &__title {
     text-align: center;
     margin-bottom: 63px;
@@ -20,10 +28,12 @@
     gap: 32px;
 
     @include breakpointsMaxW($bp-container) {
+      max-width: 563px;
       grid-template-columns: repeat(2, 1fr);
+      gap: 50px;
     }
 
-    @include breakpointsMaxW($bp-768) {
+    @include breakpointsMaxW($bp-768 - 1px) {
       grid-template-columns: 1fr;
     }
   }

@@ -15,7 +15,7 @@
     }
   }
 
-  @include breakpointsMaxW($bp-576) {
+  @include breakpointsMaxW($bp-768 - 1px) {
     grid-template-columns: repeat(2, 1fr);
   }
 

@@ -31,7 +31,7 @@
       font-weight: 400;
     }
 
-    @include breakpointsMaxW($bp-768) {
+    @include breakpointsMaxW($bp-576) {
       font-size: 14px;
     }
 
@@ -44,6 +44,10 @@
       @include maskImage(url('../images/icons/plus.svg'), cover);
       background-color: var(--color-blue-dark);
       transition: 150ms ease;
+
+      @include breakpointsMaxW($bp-991) {
+        left: 8px;
+      }
     }
   }
 
@@ -58,7 +62,11 @@
     transition: 450ms ease-in;
     z-index: 9;
 
-    @include breakpointsMaxW($bp-768) {
+    @include breakpointsMaxW($bp-991) {
+      font-size: 16px;
+    }
+
+    @include breakpointsMaxW($bp-576) {
       font-size: 14px;
     }
   }

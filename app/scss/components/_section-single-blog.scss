@@ -1,8 +1,20 @@
 .single-blog {
   margin-bottom: 28px;
 
-  &__title {
-    margin-bottom: 20px;
+  @include breakpointsMaxW($bp-991) {
+    margin-bottom: 5px;
   }
 
+  &__title {
+    margin-bottom: 20px;
+
+    @include breakpointsMaxW($bp-991) {
+      font-size: 34px;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      font-size: 20px;
+      margin-bottom: 17px;
+    }
+  }
 }

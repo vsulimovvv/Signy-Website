@@ -2,9 +2,18 @@
   padding-top: 53px;
   padding-bottom: 63px;
 
+  @include breakpointsMaxW($bp-991) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
   &__title {
     text-align: center;
     margin-bottom: 40px;
+
+    @include breakpointsMaxW($bp-991) {
+      margin-bottom: 29px;
+    }
   }
 
   &__video {
@@ -42,8 +51,8 @@
       border-radius: 50%;
     }
 
-    @include breakpointsMaxW($bp-container) {
-      height: calc(288px + (451 - 288) * ((100vw - 320px) / (1260 - 320)));
+    @include breakpointsMaxW($bp-991) {
+      height: 423px;
     }
   }
 

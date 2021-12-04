@@ -65,13 +65,17 @@ body {
 .section-title {
   font-family: $IBMPlexSerif;
   font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
 
-  font-size: calc(20px + (40 - 20) * ((100vw - 320px) / (1260 - 320)));
-  line-height: calc(22px + (48 - 30) * ((100vw - 320px) / (1260 - 320)));
-
-  @include breakpointsMinW($bp-container) {
-    font-size: 40px;
+  @include breakpointsMaxW($bp-991) {
+    font-size: 36px;
     line-height: 48px;
+  }
+
+  @include breakpointsMaxW($bp-576) {
+    font-size: 20px;
+    line-height: 22px;
   }
 }
 
@@ -145,47 +149,13 @@ body {
   }
 }
 
-// Scroll Top
-.scroll {
-  position: fixed;
-  right: 16px;
-  bottom: -20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 8px;
-  border-radius: 8px;
-  transition: 400ms;
-  background-color: var(--color-accent);
-  z-index: 100;
-  opacity: 0.3;
-  visibility: hidden;
-  z-index: 999;
-
-  svg {
-    transform: rotate(-90deg);
-    width: 30px;
-    height: 30px;
-    fill: var(--color-unaccent);
-  }
-
-  &:hover {
-    opacity: 1;
-  }
-
-  &.show-scroll {
-    visibility: visible;
-    bottom: 25px;
-  }
-}
-
 .date {
   display: inline-block;
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
 
-  @include breakpointsMaxW($bp-768) {
+  @include breakpointsMaxW($bp-576) {
     font-size: 12px;
   }
 }

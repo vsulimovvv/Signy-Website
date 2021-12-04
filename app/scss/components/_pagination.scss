@@ -2,11 +2,19 @@
   max-width: 325px;
   margin: 0 auto;
 
+  @include breakpointsMaxW($bp-576) {
+    max-width: 210px;
+  }
+
   &__list {
     width: 100%;
     display: flex;
     align-items: center;
     gap: 36px;
+
+    @include breakpointsMaxW($bp-576) {
+      gap: 28px;
+    }
   }
 
   &__link {
@@ -17,12 +25,38 @@
     text-transform: uppercase;
     transition: 150ms ease;
 
+    @include breakpointsMaxW($bp-576) {
+      font-size: 14px;
+    }
+
     &:hover {
       color: var(--color-blue);
     }
 
     &--active {
       color: var(--color-blue);
+    }
+
+    &--next {
+      .icon {
+        display: none;
+      }
+
+      @include breakpointsMaxW($bp-768) {
+
+        .text {
+          display: none;
+        }
+
+        .icon {
+          display: block;
+          width: 12px;
+          height: 18px;
+          transform: rotate(-90deg);
+          @include maskImage(url('../images/icons/chevron.svg'), cover);
+          background-color: var(--color-dark);
+        }
+      }
     }
   }
 }

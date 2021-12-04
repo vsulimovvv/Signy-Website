@@ -5,11 +5,19 @@
   text-transform: uppercase;
   letter-spacing: 0.04em;
 
+  @include breakpointsMaxW($bp-576) {
+    font-size: 12px;
+  }
+
   &__list {
     display: flex;
     align-items: center;
     gap: 14px;
     flex-wrap: wrap;
+
+    @include breakpointsMaxW($bp-576) {
+      gap: 13px;
+    }
   }
 
   &__link {
@@ -21,6 +29,10 @@
     padding: 0 14px;
     height: 24px;
     transition: 150ms ease;
+
+    @include breakpointsMaxW($bp-576) {
+      padding: 0 8px;
+    }
 
     &:hover {
       background-color: var(--color-blue);

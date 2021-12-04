@@ -2,10 +2,19 @@
   padding-top: 25px;
   padding-bottom: 16px;
 
+  @include breakpointsMaxW($bp-991) {
+    padding-top: 14px;
+  }
+
   &__title {
     font-family: $IBMPlexSans;
     line-height: 42px;
     margin-bottom: 12px;
+
+    @include breakpointsMaxW($bp-991) {
+      font-size: 20px;
+      margin-bottom: 3px;
+    }
   }
 
   &__boxes {
@@ -15,6 +24,14 @@
     will-change: max-height;
     transition: 450ms ease-in;
     position: relative;
+
+    @include breakpointsMaxW($bp-991) {
+      max-height: 250px;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      max-height: 365px;
+    }
 
     &::after {
       @include pseudoElDefault();
@@ -26,6 +43,10 @@
       opacity: 1;
       visibility: visible;
       transition: 250ms ease;
+
+      @include breakpointsMaxW($bp-576) {
+        bottom: -90px;
+      }
     }
 
     &.active {
@@ -59,7 +80,7 @@
       font-size: 16px;
     }
 
-    @include breakpointsMaxW($bp-991) {
+    @include breakpointsMaxW($bp-576) {
       font-size: 14px;
     }
   }

@@ -1,10 +1,19 @@
 .footer {
   background-color: var(--color-dark);
   color: var(--color-white);
-  padding: 64px 0;
+  padding: 64px 0 56px;
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
+  position: relative;
+
+  @include breakpointsMaxW($bp-991) {
+    padding: 44px 0 21px;
+  }
+
+  @include breakpointsMaxW($bp-576) {
+    padding: 29px 0 27px;
+  }
 
   &__top {
     display: grid;
@@ -17,7 +26,7 @@
       gap: calc(52px + (157 - 52) * ((100vw - 768px) / (1260 - 768)));
     }
 
-    @include breakpointsMaxW($bp-576) {
+    @include breakpointsMaxW($bp-768 - 1px) {
       grid-template-columns: 1fr;
     }
   }
@@ -27,15 +36,53 @@
     grid-template-columns: minmax(auto, 230px) 1fr;
     gap: 30px;
 
-    @include breakpointsMaxW($bp-576) {
+    @include breakpointsMaxW($bp-991) {
+      grid-template-columns: minmax(auto, 140px) 1fr;
+    }
+
+    @include breakpointsMaxW($bp-768 - 1px) {
       grid-template-columns: 1fr;
     }
   }
 
-  &__logo {}
-
   &__contacts {
     margin-left: auto;
+
+    @include breakpointsMaxW($bp-768 - 1px) {
+      margin-left: 0;
+    }
+  }
+
+  &__scroll-top {
+    display: none;
+
+    position: absolute;
+    right: 55px;
+    top: 55px;
+    width: 52px;
+    height: 60px;
+    border: 1px solid var(--color-white);
+    border-radius: 43px;
+
+    @include breakpointsMaxW($bp-991) {
+      display: block;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      top: 24px;
+      right: 24px;
+    }
+
+    &::after {
+      @include pseudoElDefault();
+      width: 13px;
+      height: 33px;
+      @include maskImage(url('../images/icons/arrow-top.svg'), contain);
+      background-color: var(--color-white);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 
   &__bottom {
@@ -64,6 +111,12 @@
 
     @include breakpointsMaxW($bp-576) {
       order: -1;
+    }
+  }
+
+  &__logo {
+    @include breakpointsMaxW($bp-768) {
+      margin-bottom: 20px;
     }
   }
 }

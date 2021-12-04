@@ -3,6 +3,10 @@
   padding-bottom: 44px;
   background-color: var(--color-background);
 
+  @include breakpointsMaxW($bp-991) {
+    padding-top: 27px;
+  }
+
   &__title {
     margin-bottom: 30px;
     text-align: center;
@@ -18,7 +22,7 @@
       grid-template-columns: repeat(2, 1fr);
     }
 
-    @include breakpointsMaxW($bp-768) {
+    @include breakpointsMaxW($bp-768 - 1px) {
       gap: 35px;
       grid-template-columns: 1fr;
     }

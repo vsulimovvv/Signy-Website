@@ -4,6 +4,8 @@
   text-align: center;
   background-color: var(--color-background);
 
+  @include breakpointsMaxW($bp-991) {}
+
   &__wrapper {
     max-width: 490px;
     width: 100%;
@@ -16,9 +18,9 @@
     line-height: 1;
     margin-bottom: 8px;
 
-    @include breakpointsMaxW($bp-container) {
-      font-size: calc(36px + (73 - 36) * ((100vw - 320px) / (1260 - 320)));
-      margin-bottom: calc(9px + (22 - 9) * ((100vw - 320px) / (1260 - 320)));
+    @include breakpointsMaxW($bp-991) {
+      font-size: 56px;
+      margin-bottom: 5px;
     }
   }
 
@@ -29,12 +31,18 @@
     line-height: 48px;
     margin-bottom: 16px;
 
-    @include breakpointsMaxW($bp-container) {
-      font-size: calc(20px + (40 - 20) * ((100vw - 320px) / (1260 - 320)));
-      line-height: calc(22px + (48 - 22) * ((100vw - 320px) / (1260 - 320)));
+    @include breakpointsMaxW($bp-991) {
+      font-size: 36px;
+      line-height: 1;
+      margin-bottom: 10px;
     }
   }
-  &__text{
+
+  &__text {
     line-height: 28px;
+
+    @include breakpointsMaxW($bp-991) {
+      line-height: 22px;
+    }
   }
 }

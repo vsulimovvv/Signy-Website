@@ -10,8 +10,13 @@
       @include img(cover);
     }
 
-    @include breakpointsMaxW($bp-container) {
-      height: calc(156px + (370 - 156) * ((100vw - 320px) / (1260 - 320)));
+    @include breakpointsMaxW($bp-991) {
+      height: 330px;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      height: 160px;
+      margin-bottom: 0;
     }
   }
 
@@ -36,6 +41,14 @@
   }
 
   &__text {
-    line-height: 22px;
+    line-height: 1.47;
+
+    @include breakpointsMaxW($bp-991) {
+      font-size: 16px;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      font-size: 14px;
+    }
   }
 }
