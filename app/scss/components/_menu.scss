@@ -38,13 +38,35 @@
   }
 
   &__item {
-    // &:not(:last-child) {
-    //   margin-right: 36px;
-    // }
+    position: relative;
+    // overflow: hidden;
+    z-index: 10;
+
+    .submenu {
+      position: absolute;
+      left: 0;
+      bottom: -50px;
+      background-color: transparent;
+      // opacity: 0;
+      // visibility: hidden;
+      transition: 250ms;
+      transform: translateY(-50px);
+
+      // z-index: -1;
+      z-index: 1;
+
+      &.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0px);
+      }
+    }
   }
 
   &__link {
     transition: 150ms ease;
+    position: relative;
+
     &:hover {
       transform: translateY(-3px);
     }
@@ -65,5 +87,6 @@
         background-color: var(--color-dark);
       }
     }
+
   }
 }

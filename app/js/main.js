@@ -1,4 +1,19 @@
 window.addEventListener('DOMContentLoaded', () => {
+
+  function toggleSubmenu(trigger, menu) {
+    const triggerEl = document.querySelector(trigger);
+    const submenuEl = document.querySelector(menu);
+
+    triggerEl.addEventListener('click', e => {
+      e.preventDefault();
+
+      submenuEl.classList.toggle('active');
+    })
+  };
+
+  toggleSubmenu('.menu__link--dropdown', '.submenu');
+
+
   // const showMenu = () => {
   //   const menuBtn = document.querySelector('.header__toggle');
   //   const menu = document.querySelector('.menu');
@@ -140,4 +155,18 @@ window.addEventListener('DOMContentLoaded', () => {
     bindModal('.quote__img', '.popup--thanks', '.popup__close');
   };
   modals();
+
+  function scrollHeader() {
+    const header = document.querySelector('header');
+
+    if (this.scrollY >= 50) {
+      header.classList.add('scroll-header');
+    } else {
+      header.classList.remove('scroll-header');
+    }
+  };
+
+  window.addEventListener('scroll', scrollHeader);
+
+
 });
