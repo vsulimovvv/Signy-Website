@@ -5,23 +5,39 @@
   font-size: 14px;
   line-height: 24px;
   letter-spacing: 0.19em;
+  color: var(--color-dark);
 
   @include breakpointsMaxW($bp-991) {
+    display: none;
+    z-index: 11;
     position: absolute;
     max-width: 450px;
-    height: 100%;
+    width: 100%;
+    height: 100vh;
     background-color: var(--color-white);
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: 350ms ease-in-out;
+
+    &.active {
+      transform: translateX(0);
+    }
 
     flex-direction: column;
 
-    display: none;
-
     .menu__list {
+      width: 100%;
+      height: 100%;
       flex-direction: column;
+      background-color: var(--color-white);
     }
 
     .menu__tools {
+      width: 100%;
+      height: 100%;
       flex-direction: column;
+      background-color: var(--color-white);
     }
   }
 
@@ -39,26 +55,62 @@
 
   &__item {
     position: relative;
-    // overflow: hidden;
-    z-index: 10;
 
-    .submenu {
+    .dropdown-menu {
+      width: 160px;
+      z-index: 10;
       position: absolute;
       left: 0;
-      bottom: -50px;
-      background-color: transparent;
-      // opacity: 0;
-      // visibility: hidden;
-      transition: 250ms;
-      transform: translateY(-50px);
+      top: calc(100% + 0.25rem);
+      background-color: #fff;
+      padding: 0.75rem;
+      border-radius: 0.25rem;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      pointer-events: none;
 
-      // z-index: -1;
-      z-index: 1;
+      transform: translateY(-10px);
+      transition: all 250ms ease-in-out;
+
+      &__item {
+        width: 100%;
+
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+      }
+
+      &__link {
+        display: block;
+        width: 100%;
+        transition: 150ms ease;
+
+        &:hover {
+          background-color: var(--color-blue-light);
+        }
+      }
 
       &.active {
+        pointer-events: all;
         opacity: 1;
-        visibility: visible;
-        transform: translateY(0px);
+        visibility: hidden;
+      }
+    }
+
+    .dropdown {
+      &.active {
+        .menu__link+.dropdown-menu {
+          opacity: 1;
+          visibility: visible;
+          pointer-events: all;
+          transform: translateY(0);
+        }
+
+        .menu__link--dropdown {
+          &::after {
+            transform: translateY(-50%) rotate(180deg);
+          }
+        }
       }
     }
   }
@@ -66,6 +118,9 @@
   &__link {
     transition: 150ms ease;
     position: relative;
+
+    color: var(--color-dark);
+    color: #000;
 
     &:hover {
       transform: translateY(-3px);
@@ -85,8 +140,8 @@
         transform: translateY(-50%);
         @include maskImage(url('../images/icons/chevron.svg'), cover);
         background-color: var(--color-dark);
+        transition: 250ms ease;
       }
     }
-
   }
 }

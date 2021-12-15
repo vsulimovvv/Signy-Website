@@ -1,50 +1,30 @@
 window.addEventListener('DOMContentLoaded', () => {
+  const showMenu = () => {
+    const menuBtn = document.querySelector('.header__toggle');
+    const menu = document.querySelector('.mobile-menu');
+    const menuCloseBtn = document.querySelector('.mobile-menu__close');
+    const body = document.querySelector('body');
+    const overlay = document.querySelector('.overlay');
 
-  function toggleSubmenu(trigger, menu) {
-    const triggerEl = document.querySelector(trigger);
-    const submenuEl = document.querySelector(menu);
+    menuBtn.addEventListener('click', e => {
+      menu.classList.toggle('active');
+      overlay.classList.toggle('active');
+      body.classList.toggle('no-scroll');
+    });
 
-    triggerEl.addEventListener('click', e => {
-      e.preventDefault();
+    overlay.addEventListener('click', e => {
+      menu.classList.remove('active');
+      overlay.classList.remove('active');
+      body.classList.remove('no-scroll');
+    });
 
-      submenuEl.classList.toggle('active');
-    })
+    menuCloseBtn.addEventListener('click', e => {
+      menu.classList.remove('active');
+      overlay.classList.remove('active');
+      body.classList.remove('no-scroll');
+    });
   };
-
-  toggleSubmenu('.menu__link--dropdown', '.submenu');
-
-
-  // const showMenu = () => {
-  //   const menuBtn = document.querySelector('.header__toggle');
-  //   const menu = document.querySelector('.menu');
-  //   const body = document.querySelector('body');
-  //   const overlay = document.querySelector('.overlay');
-
-  //   menuBtn.addEventListener('click', e => {
-  //     menu.classList.toggle('active');
-  //     menuBtn.classList.toggle('active');
-  //     // overlay.classList.toggle('active');
-  //     // body.classList.toggle('no-scroll');
-  //   });
-
-
-
-  //   // overlay.addEventListener('click', e => {
-  //   //   menu.classList.remove('active');
-  //   //   overlay.classList.remove('active');
-  //   //   body.classList.remove('no-scroll');
-  //   //   menuBtn.classList.remove('active');
-  //   // });
-
-  //   // overlay.addEventListener('click', e => {
-  //   // menu.classList.remove('active');
-  //   // menuBtn.classList.remove('active');
-  //   // overlay.classList.remove('active');
-  //   // body.classList.remove('no-scroll');
-  //   // });
-
-  // };
-  // showMenu();
+  showMenu();
 
 
 
@@ -168,5 +148,28 @@ window.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', scrollHeader);
 
+  // function defaultSelect() {
+  //   const select = document.querySelector('.select');
+  //   const choices = new Choices(select);
+  // };
+  // defaultSelect();
 
+  $('.select').select2();
+
+  // * ==== Dropdown
+  document.addEventListener('click', e => {
+    const isDropdownButton = e.target.matches("[data-dropdown-button]")
+    if (!isDropdownButton && e.target.closest('[data-dropdown]') != null) return;
+
+    let currentDropdown;
+    if (isDropdownButton) {
+      currentDropdown = e.target.closest('[data-dropdown]');
+      currentDropdown.classList.toggle('active');
+    };
+
+    document.querySelectorAll('[data-dropdown].active').forEach(dropdown => {
+      if (dropdown === currentDropdown) return;
+      dropdown.classList.remove('active');
+    });
+  });
 });

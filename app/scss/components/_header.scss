@@ -14,24 +14,18 @@
   width: 100%;
   left: 0;
   top: 0;
-  z-index: 9;
+  z-index: 5;
 
   &__wrapper {
     display: flex;
     justify-content: space-between;
   }
 
-  select {
-    width: 45px;
-  }
-
   &__toggle {
     display: none;
 
     @include breakpointsMaxW($bp-991) {
-      // display: flex;
       display: block;
-      z-index: 10;
       flex-shrink: 0;
       width: 27px;
       height: 27px;
@@ -89,23 +83,6 @@
 
       &:hover {
         transform: scale(1.05);
-        // transform: rotate(15deg);
-      }
-
-      &.active {
-        span {
-          background-color: transparent;
-
-          &::after {
-            transform: translateX(-50%) rotate(45deg);
-            top: 0px;
-          }
-
-          &::before {
-            bottom: 0px;
-            transform: translateX(-50%) rotate(-45deg);
-          }
-        }
       }
     }
   }

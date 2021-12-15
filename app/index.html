@@ -11,23 +11,24 @@
  <!-- Link Swiper's CSS -->
  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
- <!-- nouislider -->
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.min.css" />
-
- <!-- wSelect -->
- <link rel="stylesheet" href="css/wSelect.css">
+ <!-- jQueryFormStyler -->
+ <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
  <!-- FancyBox -->
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
 
- <!-- Custom Link -->
+ <!-- Simple Bar -->
+ <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+
+ <!-- Styles -->
  <link rel="stylesheet" href="css/style.min.css">
 
   <title>Title</title>
 </head>
 
 <body>
-  <div class="site-wrapper">
+  <div class="site-wrapper" style="position: relative;">
+    <div class="overlay"></div>
     <header class="header">
   <div class="container">
     <nav class="header__wrapper">
@@ -38,21 +39,36 @@
       <div class="header__menu menu">
         <ul class="menu__list">
           <li class="menu__item">
-            <!-- <a class="menu__link menu__link--dropdown" href="tel:0800750643">0 800 750 643</a> -->
-            <a class="menu__link menu__link--dropdown" href="#">0 800 750 643</a>
+            <div class="dropdown" data-dropdown>
+              <a class="menu__link menu__link--dropdown" data-dropdown-button href="#">0 800 750 643</a>
 
-            <ul class="submenu">
-              <li class="submenu__item">
-                <a class="submenu__link" href="">0 800 750 643</a>
-              </li>
-              <li class="submenu__item">
-                <a class="submenu__link" href="">0 800 750 643</a>
-              </li>
-            </ul>
+              <ul class="dropdown-menu">
+                <li class="dropdown-menu__item">
+                  <a class="dropdown-menu__link" href="tel:0800750643">0 800 750 643</a>
+                </li>
+                <li class="dropdown-menu__item">
+                  <a class="dropdown-menu__link" href="tel:0800750643">0 800 750 643</a>
+                </li>
+              </ul>
+            </div>
           </li>
 
           <li class="menu__item">
-            <a class="menu__link menu__link--dropdown" href="#">Про нас</a>
+            <div class="dropdown" data-dropdown>
+              <a class="menu__link menu__link--dropdown" data-dropdown-button href="#">Про нас</a>
+
+              <ul class="dropdown-menu">
+                <li class="dropdown-menu__item">
+                  <a class="dropdown-menu__link" href="#">Блог</a>
+                </li>
+                <li class="dropdown-menu__item">
+                  <a class="dropdown-menu__link" href="#">Видео</a>
+                </li>
+                <li class="dropdown-menu__item">
+                  <a class="dropdown-menu__link" href="#">Вопросы</a>
+                </li>
+              </ul>
+            </div>
           </li>
           <li class="menu__item">
             <a class="menu__link" href="#">Цены</a>
@@ -65,9 +81,74 @@
         <div class="menu__tools tools">
           <a class="tools__link btn btn--bordered" href="#">Вход</a>
           <a class="tools__link btn" href="#">Регистрация</a>
-          <select name="" id="">
-            <option value="РУС">рус</option>
+          <select class="select" name="" id="">
+            <option value="РУС">РУС</option>
+            <option value="УКР">УКР</option>
           </select>
+        </div>
+      </div>
+
+      <div class="header__menu-mobile mobile-menu" data-simplebar>
+        <div class="mobile-menu__top">
+          <a class="logo" href="#">
+            <img src="images/logo.svg" alt="Логотип">
+          </a>
+          <button class="mobile-menu__close" type="button" aria-label="Закрыть меню"></button>
+        </div>
+        <div class="mobile-menu__box">
+          <ul class="mobile-menu__phones">
+            <li class="mobile-menu__phone">
+              <a class="mobile-menu__link" href="#">0 800 750 643</a>
+            </li>
+            <li class="mobile-menu__phone">
+              <a class="mobile-menu__link" href="#">+380 44 334 56 43</a>
+            </li>
+            <li class="mobile-menu__phone">
+              <a class="mobile-menu__link" href="#">+380 44 338 86 43</a>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-menu__box">
+          <ul class="mobile-menu__tools">
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__btn btn btn--bordered" href="#">Вход</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__btn btn" href="#">Регистрация</a>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-menu__box">
+          <ul class="mobile-menu__list">
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#">ПРО НАС</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#">блог</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#">Видео</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#">Вопросы</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#">ЦЕНЫ</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#">КОНТАКТЫ</a>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-menu__box">
+          <ul class="mobile-menu__langs">
+            <li class="mobile-menu__lang">
+              <a class="mobile-menu__link" href="#">УКР</a>
+            </li>
+            <li class="mobile-menu__lang">
+              <a class="mobile-menu__link" href="#">РУС</a>
+            </li>
+          </ul>
         </div>
       </div>
 
@@ -465,20 +546,20 @@
     <!-- Swiper JS -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-  <!-- nouislider -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.min.js"></script>
-
   <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-  <!-- wSelect -->
-  <script src="js/wSelect.min.js"></script>
+  <!-- jQueryFormStyler -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
   <!-- FancyBox -->
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
 
   <!-- MixitUp JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>
+
+  <!-- Simple Bar Js  -->
+  <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
 
   <!-- JS -->
   <script src="js/main.min.js"></script>
