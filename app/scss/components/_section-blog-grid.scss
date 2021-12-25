@@ -1,5 +1,4 @@
 .blog-grid {
-
   &__filters {
     display: flex;
     align-items: center;
@@ -47,11 +46,19 @@
       transition: 150ms ease;
     }
 
+    &:focus {
+      outline: 1px solid var(--color-dark);
+    }
+
     &:hover {
       &::after {
         transform: scaleX(1);
         width: 15%;
       }
+    }
+
+    &:active {
+      background-color: var(--color-blue-light);
     }
   }
 

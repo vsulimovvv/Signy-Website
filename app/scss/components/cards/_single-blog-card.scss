@@ -29,8 +29,6 @@
     }
   }
 
-  &__info {}
-
   &__date {
     margin-bottom: 7px;
 
@@ -49,6 +47,20 @@
     margin-bottom: 17px;
     max-width: 375px;
     line-height: 42px;
+
+    a {
+      &:focus {
+        outline: 1px solid var(--color-dark);
+      }
+
+      &:hover {
+        color: var(--color-blue);
+      }
+
+      &:active {
+        background-color: var(--color-blue-light);
+      }
+    }
 
     @include breakpointsMaxW($bp-991) {
       font-weight: 600;
@@ -91,8 +103,16 @@
     text-transform: uppercase;
     transition: 150ms ease;
 
+    &:focus {
+      outline: 1px solid var(--color-dark);
+    }
+
     &:hover {
       color: var(--color-blue);
+    }
+
+    &:active {
+      background-color: var(--color-blue-light);
     }
 
     @include breakpointsMaxW($bp-991) {

@@ -30,13 +30,23 @@
     height: 24px;
     transition: 150ms ease;
 
-    @include breakpointsMaxW($bp-576) {
-      padding: 0 8px;
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5);
     }
 
     &:hover {
       background-color: var(--color-blue);
       color: var(--color-white);
+    }
+
+    &:active {
+      background-color: #0046B0;
+      transform: scale(0.98);
+      color: var(--color-white);
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      padding: 0 8px;
     }
   }
 }

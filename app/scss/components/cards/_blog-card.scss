@@ -1,10 +1,34 @@
 .blog-card {
   max-width: 370px;
 
+  &:hover {
+
+    .blog-card {
+      &__img {
+
+        &::after,
+        &::before {
+          // opacity: 0;
+          // visibility: hidden;
+          transform: scaleY(0);
+        }
+      }
+    }
+  }
+
   &__img {
     margin-bottom: 11px;
     width: 100%;
     height: 370px;
+    position: relative;
+
+    @include afterBeforeForImage();
+
+    &::after,
+    &::before {
+      transform: scaleY(1);
+      transform-origin: bottom;
+    }
 
     img {
       @include img(cover);
@@ -26,10 +50,6 @@
     line-height: 28px;
     margin-bottom: 10px;
     transition: 150ms ease;
-
-    &:hover {
-      color: var(--color-blue);
-    }
 
     @include breakpointsMaxW($bp-container) {
       font-size: calc(16px + (24 - 16) * ((100vw - 320px) / (1260 - 320)));

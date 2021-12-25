@@ -24,7 +24,9 @@
           </div>
         </div>
         <div class="contacts-page__map map">
-          <img src="images/content/map.jpg" alt="">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2543.397611690643!2d30.62305260530186!3d50.39642709281005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4c5b3861c4175%3A0xec256d725f060822!2z0L_RgNC-0YHQvy4g0J3QuNC60L7Qu9Cw0Y8g0JHQsNC20LDQvdCwLCAxNNCQLCDQmtC40LXQsiwg0KPQutGA0LDQuNC90LAsIDAyMDAw!5e0!3m2!1sru!2sru!4v1640443493049!5m2!1sru!2sru"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </div>
 
@@ -34,19 +36,21 @@
         <form class="contacts-page__form form-submit">
           <div class="form-submit__group">
             <label class="form-submit__label" for="name">Имя*:</label>
-            <input class="form-submit__input" type="text" id="name" name="name" placeholder="Иван">
+            <input class="form-submit__input input-access" type="text" id="name" name="name" placeholder="Иван">
           </div>
           <div class="form-submit__group">
             <label class="form-submit__label" for="mail">Электронная почта*:</label>
-            <input class="form-submit__input" type="text" id="mail" name="mail" placeholder="Иван" required>
+            <input class="form-submit__input input-access" type="text" id="mail" name="mail" placeholder="Иван"
+              required>
           </div>
           <div class="form-submit__group">
             <label class="form-submit__label" for="phone">Телефон*:</label>
-            <input class="form-submit__input" type="text" id="phone" name="phone" placeholder="Иван" required>
+            <input class="form-submit__input input-access" type="text" id="phone" name="phone" placeholder="Иван"
+              required>
           </div>
           <div class="form-submit__group">
             <label class="form-submit__label" for="message">Сообщение:</label>
-            <textarea class="form-submit__input form-submit__input--textarea" name="message" id="message"
+            <textarea class="form-submit__input form-submit__input--textarea input-access" name="message" id="message"
               placeholder="введите тут"></textarea>
           </div>
           <button class="form-submit__btn btn" type="submit">Отправить</button>

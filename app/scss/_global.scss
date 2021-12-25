@@ -140,6 +140,7 @@ body {
   margin-top: 32px;
 }
 
+// * ==== Swiper Dots
 .swiper-pagination {
   bottom: 30px !important;
 
@@ -164,6 +165,7 @@ body {
   }
 }
 
+// * ==== Date
 .date {
   display: inline-block;
   font-weight: 500;
@@ -175,8 +177,38 @@ body {
   }
 }
 
-
 // * ==== Custom scrollbar 
 .simplebar-scrollbar::before {
   background-color: var(--color-blue);
+}
+
+// * ==== Card title accessibility
+.card__link {
+  &:focus {
+    outline: 1px solid var(--color-dark);
+  }
+
+  &:hover {
+    color: var(--color-blue);
+  }
+
+  &:active {
+    background-color: var(--color-blue-light);
+  }
+}
+
+// * ==== input-access 
+.input-access {
+  &:focus {
+    box-shadow: 0 0 0 2px var(--color-blue);
+  }
+
+  &:hover {
+    background-color: rgba(16, 100, 229, 0.1);
+  }
+
+  &:active {
+    box-shadow: 0 0 0 1px var(--color-blue);
+    background-color: rgba(16, 100, 229, 0.1);
+  }
 }

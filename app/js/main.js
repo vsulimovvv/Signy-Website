@@ -55,7 +55,7 @@ window.addEventListener('DOMContentLoaded', () => {
         target.classList.toggle('active');
 
         if (target.classList.contains('active')) {
-          content.style.maxHeight = content.scrollHeight + 'px';
+          content.style.maxHeight = content.scrollHeight + '1px';
           // content.style.maxHeight = `${400}px`;
         } else {
           content.style.maxHeight = null;
@@ -145,12 +145,6 @@ window.addEventListener('DOMContentLoaded', () => {
   };
 
   window.addEventListener('scroll', scrollHeader);
-
-  // function defaultSelect() {
-  //   const select = document.querySelector('.select');
-  //   const choices = new Choices(select);
-  // };
-  // defaultSelect();
 
   $('.select').select2();
 
