@@ -3,6 +3,8 @@
   line-height: 1;
   font-weight: 500;
   margin-bottom: 22px;
+  padding-top: 105px;
+  z-index: 5;
 
   &__list {
     display: flex;
@@ -11,7 +13,6 @@
   }
 
   &__item {
-
     position: relative;
 
     &::after {
@@ -35,5 +36,28 @@
 
   &__link {
     color: var(--color-gray);
+    transition: 150ms ease-in-out;
+
+    &:focus {
+      outline: 1px solid var(--color-dark);
+    }
+
+    &:hover {
+      color: var(--color-dark);
+    }
+
+    &:active {
+      background-color: var(--color-blue-light);
+    }
+
+    &--active {
+      &:hover {
+        color: var(--color-gray);
+      }
+
+      &:active {
+        background-color: transparent;
+      }
+    }
   }
 }

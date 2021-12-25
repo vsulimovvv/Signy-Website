@@ -23,51 +23,11 @@
  <!-- Styles -->
  <link rel="stylesheet" href="css/style.min.css">
 
-  <title>Contacts</title>
+  <title>404</title>
 </head>
 
 <body>
   <div class="site-wrapper">
-    <div class="popup popup--form">
-  <div class="popup__container">
-    <button class="popup__close" type="button"></button>
-    <h2 class="popup__title">Демо версия</h2>
-    <p class="popup__text">Заполни форму и наши менеджеры свяжутся с тобой</p>
-
-    <form class="popup__form form-submit">
-      <div class="form-submit__group">
-        <label class="form-submit__label" for="name">Имя*:</label>
-        <input class="form-submit__input" type="text" id="name" name="name" placeholder="Иван" required>
-      </div>
-      <div class="form-submit__group">
-        <label class="form-submit__label" for="mail">Электронная почта*:</label>
-        <input class="form-submit__input" type="text" id="mail" name="mail" placeholder="Иван" required>
-      </div>
-      <div class="form-submit__group">
-        <label class="form-submit__label" for="phone">Телефон*:</label>
-        <input class="form-submit__input" type="text" id="phone" name="phone" placeholder="Иван" required>
-      </div>
-
-      <button class="form-submit__btn btn" type="submit">Отправить</button>
-    </form>
-  </div>
-</div>
-
-<div class="popup popup--thanks">
-  <div class="popup__container">
-    <button class="popup__close" type="button"></button>
-    <h2 class="popup__title">Спасибо</h2>
-    <p class="popup__text">Твое сообщение отправленно!
-      Наши менеджеры свяжутся с тобой в ближайшее время</p>
-
-    <div class="popup__img">
-      <svg>
-        <use xlink:href="images/sprite.svg#mail-big"></use>
-      </svg>
-    </div>
-  </div>
-</div>
-    <div class="overlay"></div>
     <header class="header">
   <div class="container">
     <nav class="header__wrapper">
@@ -197,79 +157,17 @@
     </nav>
   </div>
 </header>
-
-    <div class="breadcrumbs">
-      <div class="container">
-        <ul class="breadcrumbs__list">
-          <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link" href="#">Signy</a>
-          </li>
-          <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link breadcrumbs__link--active">Контакты</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
+    <div class="overlay"></div>
+    
     <main class="main">
-      <section class="contacts-page">
-  <div class="container">
-    <h2 class="contacts-page__title section-title">Наши контакты</h2>
-
-    <div class="contacts-page__wrapper">
-      <div class="contacts-page__top">
-        <div class="contacts-page__info">
-          <div class="contacts-page__text">
-            <p>Мы всегда рады ответить на ваши вопросы и развивать эффективное сотрудничество по всем вопросам,
-              связанным
-              с электронным документооборотом.</p>
-          </div>
-
-          <div class="contacts-page__box contacts-page__box--phones">
-            <a href="tel:0800750643">0 800 750 643</a>
-            <a href="tel:30443345643">+3 044 334 56 43</a>
-            <a href="tel:30443388643">+3 044 338 86 43</a>
-          </div>
-          <div class="contacts-page__box contacts-page__box--mail">
-            <a href="mailto:infosmartsign@smarttender.biz">infosmartsign@smarttender.biz</a>
-          </div>
-          <div class="contacts-page__box contacts-page__box--location">
-            <a href="#">пр-т Бажана, 14 АКиев, 02072</a>
-          </div>
-        </div>
-        <div class="contacts-page__map map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2543.397611690643!2d30.62305260530186!3d50.39642709281005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4c5b3861c4175%3A0xec256d725f060822!2z0L_RgNC-0YHQvy4g0J3QuNC60L7Qu9Cw0Y8g0JHQsNC20LDQvdCwLCAxNNCQLCDQmtC40LXQsiwg0KPQutGA0LDQuNC90LAsIDAyMDAw!5e0!3m2!1sru!2sru!4v1640443493049!5m2!1sru!2sru"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
+      <section class="error">
+  <div class="error__wrapper">
+    <div class="error__offer">
+      <div class="error__text">
+        Мы честно старались найти, но этой страницы
+        по всей видимости не существует.
       </div>
-
-      <div class="contacts-page__bottom">
-        <h2 class="contacts-page__title contacts-page__title--bottom section-title">...или напишите нам:</h2>
-
-        <form class="contacts-page__form form-submit">
-          <div class="form-submit__group">
-            <label class="form-submit__label" for="name">Имя*:</label>
-            <input class="form-submit__input input-access" type="text" id="name" name="name" placeholder="Иван">
-          </div>
-          <div class="form-submit__group">
-            <label class="form-submit__label" for="mail">Электронная почта*:</label>
-            <input class="form-submit__input input-access" type="text" id="mail" name="mail" placeholder="Иван"
-              required>
-          </div>
-          <div class="form-submit__group">
-            <label class="form-submit__label" for="phone">Телефон*:</label>
-            <input class="form-submit__input input-access" type="text" id="phone" name="phone" placeholder="Иван"
-              required>
-          </div>
-          <div class="form-submit__group">
-            <label class="form-submit__label" for="message">Сообщение:</label>
-            <textarea class="form-submit__input form-submit__input--textarea input-access" name="message" id="message"
-              placeholder="введите тут"></textarea>
-          </div>
-          <button class="form-submit__btn btn" type="submit">Отправить</button>
-        </form>
-      </div>
+      <a class="error__btn btn btn--bordered" href="#">на главную</a>
     </div>
   </div>
 </section>
