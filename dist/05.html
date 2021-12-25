@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Favicon -->
+ <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+
+ <!-- Link Swiper's CSS -->
+ <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+ <!-- jQueryFormStyler -->
+ <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+ <!-- FancyBox -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
+
+ <!-- Simple Bar -->
+ <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+
+ <!-- Styles -->
+ <link rel="stylesheet" href="css/style.min.css">
+
+  <title>Contacts</title>
+</head>
+
+<body>
+  <div class="site-wrapper">
+    <div class="popup popup--form">
+  <div class="popup__container">
+    <button class="popup__close" type="button"></button>
+    <h2 class="popup__title">Демо версия</h2>
+    <div class="popup__text">
+      <p>Заполни форму и наши менеджеры свяжутся с тобой</p>
+    </div>
+
+    <form class="popup__form form-submit">
+      <div class="form-submit__group">
+        <label class="form-submit__label" for="name">Имя*:</label>
+        <input class="form-submit__input" type="text" id="name" name="name" placeholder="Иван" required>
+      </div>
+      <div class="form-submit__group">
+        <label class="form-submit__label" for="mail">Электронная почта*:</label>
+        <input class="form-submit__input" type="email" id="mail" name="mail" placeholder="Иван" required>
+      </div>
+      <div class="form-submit__group">
+        <label class="form-submit__label" for="phone">Телефон*:</label>
+        <input class="form-submit__input" type="tel" id="phone" name="phone" placeholder="Иван" required>
+      </div>
+
+      <button class="form-submit__btn btn" type="submit">Отправить</button>
+    </form>
+  </div>
+</div>
+
+<div class="popup popup--thanks">
+  <div class="popup__container">
+    <button class="popup__close" type="button"></button>
+    <h2 class="popup__title">Спасибо</h2>
+    <div class="popup__text">
+      <p>Твое сообщение отправленно! Наши менеджеры свяжутся с тобой в ближайшее время</p>
+    </div>
+    <div class="popup__img">
+      <svg>
+        <use xlink:href="images/sprite.svg#mail-big"></use>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<div class="popup popup--form">
+  <div class="popup__container">
+    <button class="popup__close" type="button"></button>
+    <h2 class="popup__title">Демо версия</h2>
+    <p class="popup__text">Заполни форму и наши менеджеры свяжутся с тобой</p>
+
+    <form class="popup__form form-submit">
+      <div class="form-submit__group">
+        <label class="form-submit__label" for="name">Имя*:</label>
+        <input class="form-submit__input" type="text" id="name" name="name" placeholder="Иван" required>
+      </div>
+      <div class="form-submit__group">
+        <label class="form-submit__label" for="mail">Электронная почта*:</label>
+        <input class="form-submit__input" type="email" id="mail" name="mail" placeholder="Иван" required>
+      </div>
+      <div class="form-submit__group">
+        <label class="form-submit__label" for="phone">Телефон*:</label>
+        <input class="form-submit__input" type="tel" id="phone" name="phone" placeholder="Иван" required>
+      </div>
+
+      <button class="form-submit__btn btn" type="submit">Отправить</button>
+    </form>
+  </div>
+</div>
+    <div class="overlay"></div>
+    <header class="header">
+  <div class="container">
+    <nav class="header__wrapper">
+      <a class="logo" href="#">
+        <img src="images/logo.svg" alt="Логотип">
+      </a>
+
+      <div class="header__menu menu">
+        <ul class="menu__list">
+          <li class="menu__item">
+            <div class="dropdown" data-dropdown>
+              <a class="menu__link menu__link--dropdown" data-dropdown-button href="#">0 800 750 643</a>
+
+              <ul class="dropdown-menu">
+                <li class="dropdown-menu__item">
+                  <a class="dropdown-menu__link" href="tel:0800750643">0 800 750 643</a>
+                </li>
+                <li class="dropdown-menu__item">
+                  <a class="dropdown-menu__link" href="tel:0800750643">0 800 750 643</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu__item">
+            <div class="dropdown" data-dropdown>
+              <a class="menu__link menu__link--dropdown" data-dropdown-button href="#">Про нас</a>
+
+              <ul class="dropdown-menu">
+                <li class="dropdown-menu__item">
+                  <a class="dropdown-menu__link" href="#">Блог</a>
+                </li>
+                <li class="dropdown-menu__item">
+                  <a class="dropdown-menu__link" href="#">Видео</a>
+                </li>
+                <li class="dropdown-menu__item">
+                  <a class="dropdown-menu__link" href="#">Вопросы</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#">Цены</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#">Контакты</a>
+          </li>
+        </ul>
+
+        <div class="menu__tools tools">
+          <a class="tools__link btn btn--bordered" href="#">Вход</a>
+          <a class="tools__link btn" href="#">Регистрация</a>
+          <select class="select" name="country" id="country">
+            <option value="РУС">РУС</option>
+            <option value="УКР">УКР</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="header__menu-mobile mobile-menu" data-simplebar>
+        <div class="mobile-menu__top">
+          <a class="logo" href="#">
+            <img src="images/logo.svg" alt="Логотип">
+          </a>
+          <button class="mobile-menu__close" type="button" aria-label="Закрыть меню"></button>
+        </div>
+        <div class="mobile-menu__box">
+          <ul class="mobile-menu__phones">
+            <li class="mobile-menu__phone">
+              <a class="mobile-menu__link" href="#">0 800 750 643</a>
+            </li>
+            <li class="mobile-menu__phone">
+              <a class="mobile-menu__link" href="#">+380 44 334 56 43</a>
+            </li>
+            <li class="mobile-menu__phone">
+              <a class="mobile-menu__link" href="#">+380 44 338 86 43</a>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-menu__box">
+          <ul class="mobile-menu__tools">
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__btn btn btn--bordered" href="#">Вход</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__btn btn" href="#">Регистрация</a>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-menu__box">
+          <ul class="mobile-menu__list">
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#">ПРО НАС</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#">блог</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#">Видео</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#">Вопросы</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#">ЦЕНЫ</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#">КОНТАКТЫ</a>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-menu__box">
+          <ul class="mobile-menu__langs">
+            <li class="mobile-menu__lang">
+              <a class="mobile-menu__link" href="#">УКР</a>
+            </li>
+            <li class="mobile-menu__lang">
+              <a class="mobile-menu__link" href="#">РУС</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <button class="header__toggle" type="button" aria-label="Открыть меню">
+        <span class="header__toggle-line"></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+    <div class="breadcrumbs">
+      <div class="container">
+        <ul class="breadcrumbs__list">
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="#">Signy</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link breadcrumbs__link--active">Контакты</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <main class="main">
+      <section class="contacts-page">
+  <div class="container">
+    <h2 class="contacts-page__title section-title">Наши контакты</h2>
+
+    <div class="contacts-page__wrapper">
+      <div class="contacts-page__top">
+        <div class="contacts-page__info">
+          <div class="contacts-page__text">
+            <p>Мы всегда рады ответить на ваши вопросы и развивать эффективное сотрудничество по всем вопросам,
+              связанным
+              с электронным документооборотом.</p>
+          </div>
+
+          <div class="contacts-page__box contacts-page__box--phones">
+            <a href="tel:0800750643">0 800 750 643</a>
+            <a href="tel:30443345643">+3 044 334 56 43</a>
+            <a href="tel:30443388643">+3 044 338 86 43</a>
+          </div>
+          <div class="contacts-page__box contacts-page__box--mail">
+            <a href="mailto:infosmartsign@smarttender.biz">infosmartsign@smarttender.biz</a>
+          </div>
+          <div class="contacts-page__box contacts-page__box--location">
+            <a href="#">пр-т Бажана, 14 АКиев, 02072</a>
+          </div>
+        </div>
+        <div class="contacts-page__map map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2543.397611690643!2d30.62305260530186!3d50.39642709281005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4c5b3861c4175%3A0xec256d725f060822!2z0L_RgNC-0YHQvy4g0J3QuNC60L7Qu9Cw0Y8g0JHQsNC20LDQvdCwLCAxNNCQLCDQmtC40LXQsiwg0KPQutGA0LDQuNC90LAsIDAyMDAw!5e0!3m2!1sru!2sru!4v1640443493049!5m2!1sru!2sru"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <div class="contacts-page__bottom">
+        <h2 class="contacts-page__title contacts-page__title--bottom section-title">...или напишите нам:</h2>
+
+        <form class="contacts-page__form form-submit">
+          <div class="form-submit__group">
+            <label class="form-submit__label" for="name">Имя*:</label>
+            <input class="form-submit__input input-access" type="text" id="name" name="name" placeholder="Иван">
+          </div>
+          <div class="form-submit__group">
+            <label class="form-submit__label" for="mail">Электронная почта*:</label>
+            <input class="form-submit__input input-access" type="email" id="mail" name="mail" placeholder="Иван"
+              required>
+          </div>
+          <div class="form-submit__group">
+            <label class="form-submit__label" for="phone">Телефон*:</label>
+            <input class="form-submit__input input-access" type="tel" id="phone" name="phone" placeholder="Иван"
+              required>
+          </div>
+          <div class="form-submit__group">
+            <label class="form-submit__label" for="message">Сообщение:</label>
+            <textarea class="form-submit__input form-submit__input--textarea input-access" name="message" id="message"
+              placeholder="введите тут"></textarea>
+          </div>
+          <button class="form-submit__btn btn" type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+    </main>
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <a class="footer__logo logo" href="#">
+        <img src="images/logo-white.svg" alt="Логотип">
+      </a>
+
+      <div class="footer__right">
+        <div class="footer__menu footer-menu">
+          <ul class="footer-menu__list">
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">Про нас</a>
+            </li>
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">Цены</a>
+            </li>
+            <li class="footer-menu__item mt32">
+              <a class="footer-menu__link" href="#">Вход</a>
+            </li>
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">Регистрация</a>
+            </li>
+          </ul>
+          <ul class="footer-menu__list">
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">Блог</a>
+            </li>
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">Контакты</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__contacts contacts">
+          <div class="contacts__mail">
+            <a href="mailto:infosmartsign@smarttender.biz">infosmartsign@smarttender.biz</a>
+            <a href="#">Facebook</a>
+          </div>
+          <div class="contacts__address">
+            <address>
+              пр-т Миколи Бажана, 14 А
+              Київ, 02072
+            </address>
+            <div class="contacts__phones">
+              <a href="tel:0800750643">0 800 750643</a>
+              <a href="tel:380443345643">+380 44 334 56 43</a>
+              <a href="tel:380443388643">+380 44 338 86 43</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a class="footer__scroll-top scroll" href="#" aria-label="Вернуться наверх"></a>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__text">© 2020 Signy</p>
+      <div class="footer__confidentiality">
+        <a href="#">Договор оферты</a>
+        <a href="#">Безопасность сервиса</a>
+      </div>
+    </div>
+  </div>
+</footer>
+  </div>
+
+    <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- jQueryFormStyler -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <!-- FancyBox -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+  <!-- MixitUp JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>
+
+  <!-- Simple Bar Js  -->
+  <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+
+  <!-- JS -->
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>

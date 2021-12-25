@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Favicon -->
+ <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+
+ <!-- Link Swiper's CSS -->
+ <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+ <!-- jQueryFormStyler -->
+ <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+ <!-- FancyBox -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
+
+ <!-- Simple Bar -->
+ <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+
+ <!-- Styles -->
+ <link rel="stylesheet" href="css/style.min.css">
+
+  <title>Blog</title>
+</head>
+
+<body>
+  <div class="site-wrapper">
+    <div class="popup popup--form">
+  <div class="popup__container">
+    <button class="popup__close" type="button"></button>
+    <h2 class="popup__title">Демо версия</h2>
+    <div class="popup__text">
+      <p>Заполни форму и наши менеджеры свяжутся с тобой</p>
+    </div>
+
+    <form class="popup__form form-submit">
+      <div class="form-submit__group">
+        <label class="form-submit__label" for="name">Имя*:</label>
+        <input class="form-submit__input" type="text" id="name" name="name" placeholder="Иван" required>
+      </div>
+      <div class="form-submit__group">
+        <label class="form-submit__label" for="mail">Электронная почта*:</label>
+        <input class="form-submit__input" type="email" id="mail" name="mail" placeholder="Иван" required>
+      </div>
+      <div class="form-submit__group">
+        <label class="form-submit__label" for="phone">Телефон*:</label>
+        <input class="form-submit__input" type="tel" id="phone" name="phone" placeholder="Иван" required>
+      </div>
+
+      <button class="form-submit__btn btn" type="submit">Отправить</button>
+    </form>
+  </div>
+</div>
+
+<div class="popup popup--thanks">
+  <div class="popup__container">
+    <button class="popup__close" type="button"></button>
+    <h2 class="popup__title">Спасибо</h2>
+    <div class="popup__text">
+      <p>Твое сообщение отправленно! Наши менеджеры свяжутся с тобой в ближайшее время</p>
+    </div>
+    <div class="popup__img">
+      <svg>
+        <use xlink:href="images/sprite.svg#mail-big"></use>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<div class="popup popup--form">
+  <div class="popup__container">
+    <button class="popup__close" type="button"></button>
+    <h2 class="popup__title">Демо версия</h2>
+    <p class="popup__text">Заполни форму и наши менеджеры свяжутся с тобой</p>
+
+    <form class="popup__form form-submit">
+      <div class="form-submit__group">
+        <label class="form-submit__label" for="name">Имя*:</label>
+        <input class="form-submit__input" type="text" id="name" name="name" placeholder="Иван" required>
+      </div>
+      <div class="form-submit__group">
+        <label class="form-submit__label" for="mail">Электронная почта*:</label>
+        <input class="form-submit__input" type="email" id="mail" name="mail" placeholder="Иван" required>
+      </div>
+      <div class="form-submit__group">
+        <label class="form-submit__label" for="phone">Телефон*:</label>
+        <input class="form-submit__input" type="tel" id="phone" name="phone" placeholder="Иван" required>
+      </div>
+
+      <button class="form-submit__btn btn" type="submit">Отправить</button>
+    </form>
+  </div>
+</div>
+    <div class="overlay"></div>
+    <header class="header">
+  <div class="container">
+    <nav class="header__wrapper">
+      <a class="logo" href="#">
+        <img src="images/logo.svg" alt="Логотип">
+      </a>
+
+      <div class="header__menu menu">
+        <ul class="menu__list">
+          <li class="menu__item">
+            <div class="dropdown" data-dropdown>
+              <a class="menu__link menu__link--dropdown" data-dropdown-button href="#">0 800 750 643</a>
+
+              <ul class="dropdown-menu">
+                <li class="dropdown-menu__item">
+                  <a class="dropdown-menu__link" href="tel:0800750643">0 800 750 643</a>
+                </li>
+                <li class="dropdown-menu__item">
+                  <a class="dropdown-menu__link" href="tel:0800750643">0 800 750 643</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu__item">
+            <div class="dropdown" data-dropdown>
+              <a class="menu__link menu__link--dropdown" data-dropdown-button href="#">Про нас</a>
+
+              <ul class="dropdown-menu">
+                <li class="dropdown-menu__item">
+                  <a class="dropdown-menu__link" href="#">Блог</a>
+                </li>
+                <li class="dropdown-menu__item">
+                  <a class="dropdown-menu__link" href="#">Видео</a>
+                </li>
+                <li class="dropdown-menu__item">
+                  <a class="dropdown-menu__link" href="#">Вопросы</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#">Цены</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#">Контакты</a>
+          </li>
+        </ul>
+
+        <div class="menu__tools tools">
+          <a class="tools__link btn btn--bordered" href="#">Вход</a>
+          <a class="tools__link btn" href="#">Регистрация</a>
+          <select class="select" name="country" id="country">
+            <option value="РУС">РУС</option>
+            <option value="УКР">УКР</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="header__menu-mobile mobile-menu" data-simplebar>
+        <div class="mobile-menu__top">
+          <a class="logo" href="#">
+            <img src="images/logo.svg" alt="Логотип">
+          </a>
+          <button class="mobile-menu__close" type="button" aria-label="Закрыть меню"></button>
+        </div>
+        <div class="mobile-menu__box">
+          <ul class="mobile-menu__phones">
+            <li class="mobile-menu__phone">
+              <a class="mobile-menu__link" href="#">0 800 750 643</a>
+            </li>
+            <li class="mobile-menu__phone">
+              <a class="mobile-menu__link" href="#">+380 44 334 56 43</a>
+            </li>
+            <li class="mobile-menu__phone">
+              <a class="mobile-menu__link" href="#">+380 44 338 86 43</a>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-menu__box">
+          <ul class="mobile-menu__tools">
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__btn btn btn--bordered" href="#">Вход</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__btn btn" href="#">Регистрация</a>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-menu__box">
+          <ul class="mobile-menu__list">
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#">ПРО НАС</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#">блог</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#">Видео</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#">Вопросы</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#">ЦЕНЫ</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href="#">КОНТАКТЫ</a>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-menu__box">
+          <ul class="mobile-menu__langs">
+            <li class="mobile-menu__lang">
+              <a class="mobile-menu__link" href="#">УКР</a>
+            </li>
+            <li class="mobile-menu__lang">
+              <a class="mobile-menu__link" href="#">РУС</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <button class="header__toggle" type="button" aria-label="Открыть меню">
+        <span class="header__toggle-line"></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+    <div class="breadcrumbs">
+      <div class="container">
+        <ul class="breadcrumbs__list">
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="#">Signy</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link breadcrumbs__link--active">Блог</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <main class="main">
+
+
+
+      <section class="single-blog">
+  <div class="container">
+    <h1 class="single-blog__title section-title">Интересно пишем про</h1>
+
+    <div class="single-blog__wrapper">
+      <div class="single-blog-card">
+        <div class="single-blog-card__img">
+          <img src="images/content/blog-page/1.jpg" width="730" height="422" alt="Интересно пишем про">
+        </div>
+        <div class="single-blog-card__info">
+          <time class="single-blog-card__date date" datetime="2020-05-28">28.05.2020</time>
+          <h3 class="single-blog-card__title section-title">
+            Burn Calories Quicker in 30 Min.
+          </h3>
+          <div class="single-blog-card__tags tags">
+            <ul class="tags__list">
+              <li class="tags__item">
+                <a href="#" class="tags__link">про продукт</a>
+              </li>
+              <li class="tags__item">
+                <a href="#" class="tags__link">теги</a>
+              </li>
+              <li class="tags__item">
+                <a href="#" class="tags__link">много тегов</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="single-blog-card__text">
+            <p>Идейные соображения высшего порядка, а также укрепление и развитие структуры играет важную роль в
+              формировании существенных финансовых и административных условий. </p>
+            <p> Не следует, однако забывать, что дальнейшее развитие различных форм деятельности способствует подготовки
+              и реализации форм развития.</p>
+          </div>
+
+          <a class="single-blog-card__btn" href="#">Читать</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+      <section class="blog-grid">
+  <div class="container">
+    <h2 class="visually-hidden">Блог карточки</h2>
+
+    <div class="blog-grid__wrapper">
+      <div class="blog-grid__content">
+        <ul class="blog-grid__filters">
+          <li class="blog-grid__filter">
+            <button class="blog-grid__button" type="button" data-filter="all">Все</button>
+          </li>
+          <li class="blog-grid__filter">
+            <button class="blog-grid__button" type="button" data-filter=".news">новости</button>
+          </li>
+          <li class="blog-grid__filter">
+            <button class="blog-grid__button" type="button" data-filter=".education">обучение</button>
+          </li>
+          <li class="blog-grid__filter">
+            <button class="blog-grid__button" type="button" data-filter=".laws">законы</button>
+          </li>
+        </ul>
+
+        <ul class="blog-grid__list">
+          <li class="blog-grid__item mix laws">
+            <article class="blog-card">
+              <div class="blog-card__img">
+                <img src="images/content/blog-page/blog-card/1.jpg" width="370" height="370" alt="Блог">
+              </div>
+              <time class="blog-card__date date" datetime="2020-05-28">05.03.2020</time>
+              <h3 class="blog-card__title">
+                <a class="card__link" href="#">Burn Calories Quicker in 30 Min.</a>
+              </h3>
+              <div class="blog-card__tags tags">
+                <ul class="tags__list">
+                  <li class="tags__item">
+                    <a href="#" class="tags__link">про продукт</a>
+                  </li>
+                  <li class="tags__item">
+                    <a href="#" class="tags__link">теги</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="blog-card__text">
+                <p>Не следует, однако забывать, что дальнейшее развитие различных форм деятельности</p>
+              </div>
+            </article>
+          </li>
+          <li class="blog-grid__item mix laws">
+            <article class="blog-card">
+              <div class="blog-card__img">
+                <img src="images/content/blog-page/blog-card/2.jpg" width="370" height="370" alt="Блог">
+              </div>
+              <time class="blog-card__date date" datetime="2020-05-28">28.05.2020</time>
+              <h3 class="blog-card__title">
+                <a class="card__link" href="#">Burn Calories Quicker in 30 Min.</a>
+              </h3>
+              <div class="blog-card__tags tags">
+                <ul class="tags__list">
+                  <li class="tags__item">
+                    <a href="#" class="tags__link">про продукт</a>
+                  </li>
+                  <li class="tags__item">
+                    <a href="#" class="tags__link">теги</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="blog-card__text">
+                <p>Не следует, однако забывать, что дальнейшее развитие различных форм деятельности</p>
+              </div>
+            </article>
+          </li>
+          <li class="blog-grid__item mix education">
+            <article class="blog-card">
+              <div class="blog-card__img">
+                <img src="images/content/blog-page/blog-card/3.jpg" width="370" height="370" alt="Блог">
+              </div>
+              <time class="blog-card__date date" datetime="2020-05-28">28.05.2020</time>
+              <h3 class="blog-card__title">
+                <a class="card__link" href="#">Burn Calories Quicker in 30 Min.</a>
+              </h3>
+              <div class="blog-card__tags tags">
+                <ul class="tags__list">
+                  <li class="tags__item">
+                    <a href="#" class="tags__link">про продукт</a>
+                  </li>
+                  <li class="tags__item">
+                    <a href="#" class="tags__link">теги</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="blog-card__text">
+                <p>Не следует, однако забывать, что дальнейшее развитие различных форм деятельности</p>
+              </div>
+            </article>
+          </li>
+          <li class="blog-grid__item mix laws">
+            <article class="blog-card">
+              <div class="blog-card__img">
+                <img src="images/content/blog-page/blog-card/1.jpg" width="370" height="370" alt="Блог">
+              </div>
+              <time class="blog-card__date date" datetime="2020-05-28">05.03.2020</time>
+              <h3 class="blog-card__title">
+                <a class="card__link" href="#">Burn Calories Quicker in 30 Min.</a>
+              </h3>
+              <div class="blog-card__tags tags">
+                <ul class="tags__list">
+                  <li class="tags__item">
+                    <a href="#" class="tags__link">про продукт</a>
+                  </li>
+                  <li class="tags__item">
+                    <a href="#" class="tags__link">теги</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="blog-card__text">
+                <p>Не следует, однако забывать, что дальнейшее развитие различных форм деятельности</p>
+              </div>
+            </article>
+          </li>
+          <li class="blog-grid__item mix laws">
+            <article class="blog-card">
+              <div class="blog-card__img">
+                <img src="images/content/blog-page/blog-card/2.jpg" width="370" height="370" alt="Блог">
+              </div>
+              <time class="blog-card__date date" datetime="2020-05-28">28.05.2020</time>
+              <h3 class="blog-card__title">
+                <a class="card__link" href="#">Burn Calories Quicker in 30 Min.</a>
+              </h3>
+              <div class="blog-card__tags tags">
+                <ul class="tags__list">
+                  <li class="tags__item">
+                    <a href="#" class="tags__link">про продукт</a>
+                  </li>
+                  <li class="tags__item">
+                    <a href="#" class="tags__link">теги</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="blog-card__text">
+                <p>Не следует, однако забывать, что дальнейшее развитие различных форм деятельности</p>
+              </div>
+            </article>
+          </li>
+          <li class="blog-grid__item mix education">
+            <article class="blog-card">
+              <div class="blog-card__img">
+                <img src="images/content/blog-page/blog-card/3.jpg" width="370" height="370" alt="Блог">
+              </div>
+              <time class="blog-card__date date" datetime="2020-05-28">28.05.2020</time>
+              <h3 class="blog-card__title">
+                <a class="card__link" href="#">Burn Calories Quicker in 30 Min.</a>
+              </h3>
+              <div class="blog-card__tags tags">
+                <ul class="tags__list">
+                  <li class="tags__item">
+                    <a href="#" class="tags__link">про продукт</a>
+                  </li>
+                  <li class="tags__item">
+                    <a href="#" class="tags__link">теги</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="blog-card__text">
+                <p>Не следует, однако забывать, что дальнейшее развитие различных форм деятельности</p>
+              </div>
+            </article>
+          </li>
+          <li class="blog-grid__item mix laws">
+            <article class="blog-card">
+              <div class="blog-card__img">
+                <img src="images/content/blog-page/blog-card/1.jpg" width="370" height="370" alt="Блог">
+              </div>
+              <time class="blog-card__date date" datetime="2020-05-28">05.03.2020</time>
+              <h3 class="blog-card__title">
+                <a class="card__link" href="#">Burn Calories Quicker in 30 Min.</a>
+              </h3>
+              <div class="blog-card__tags tags">
+                <ul class="tags__list">
+                  <li class="tags__item">
+                    <a href="#" class="tags__link">про продукт</a>
+                  </li>
+                  <li class="tags__item">
+                    <a href="#" class="tags__link">теги</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="blog-card__text">
+                <p>Не следует, однако забывать, что дальнейшее развитие различных форм деятельности</p>
+              </div>
+            </article>
+          </li>
+          <li class="blog-grid__item mix laws">
+            <article class="blog-card">
+              <div class="blog-card__img">
+                <img src="images/content/blog-page/blog-card/2.jpg" width="370" height="370" alt="Блог">
+              </div>
+              <time class="blog-card__date date" datetime="2020-05-28">28.05.2020</time>
+              <h3 class="blog-card__title">
+                <a class="card__link" href="#">Burn Calories Quicker in 30 Min.</a>
+              </h3>
+              <div class="blog-card__tags tags">
+                <ul class="tags__list">
+                  <li class="tags__item">
+                    <a href="#" class="tags__link">про продукт</a>
+                  </li>
+                  <li class="tags__item">
+                    <a href="#" class="tags__link">теги</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="blog-card__text">
+                <p>Не следует, однако забывать, что дальнейшее развитие различных форм деятельности</p>
+              </div>
+            </article>
+          </li>
+          <li class="blog-grid__item mix education">
+            <article class="blog-card">
+              <div class="blog-card__img">
+                <img src="images/content/blog-page/blog-card/3.jpg" width="370" height="370" alt="Блог">
+              </div>
+              <time class="blog-card__date date" datetime="2020-05-28">28.05.2020</time>
+              <h3 class="blog-card__title">
+                <a class="card__link" href="#">Burn Calories Quicker in 30 Min.</a>
+              </h3>
+              <div class="blog-card__tags tags">
+                <ul class="tags__list">
+                  <li class="tags__item">
+                    <a href="#" class="tags__link">про продукт</a>
+                  </li>
+                  <li class="tags__item">
+                    <a href="#" class="tags__link">теги</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="blog-card__text">
+                <p>Не следует, однако забывать, что дальнейшее развитие различных форм деятельности</p>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </div>
+
+      <div class="blog-grid__pagination">
+        <div class="pagination">
+          <ul class="pagination__list">
+            <li class="pagination__item">
+              <a class="pagination__link pagination__link--active" href="#">01</a>
+            </li>
+            <li class="pagination__item">
+              <a class="pagination__link" href="#">02</a>
+            </li>
+            <li class="pagination__item">
+              <a class="pagination__link" href="#">03</a>
+            </li>
+            <li class="pagination__item">
+              <a class="pagination__link" href="#">04</a>
+            </li>
+            <li class="pagination__item">
+              <a class="pagination__link pagination__link--next" href="#">
+                <span class="text">дальше</span>
+                <span class="icon"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+      <section class="subscribe subscribe--background">
+  <div class="container">
+    <h2 class="subscribe__title section-title">Подпишись на наши новости!</h2>
+    <p class="subscribe__text">Введи свой электронный адрес и будь в курсе всех обновлений</p>
+
+    <form class="subscribe__form form" action="/">
+      <label class="form__group">
+        <input class="form__input input-access" type="text" id="subscribe" name="subscribe" required>
+      </label>
+      <button class="form__btn btn" type="submit">Отправить</button>
+    </form>
+  </div>
+</section>
+      <section class="section-text">
+  <div class="container">
+    <div class="section-text__boxes">
+      <div class="section-text__box">
+        <h2 class="section-text__title section-title">SEO текст</h2>
+        <p>Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности требуют от нас анализа
+          существенных финансовых и административных условий. Задача организации, в особенности же укрепление и развитие
+          структуры позволяет оценить значение новых предложений. С другой стороны постоянный количественный рост и
+          сфера
+          нашей активности требуют от нас анализа позиций, занимаемых участниками в отношении поставленных задач. Задача
+          организации, в особенности же дальнейшее развитие различных форм деятельности позволяет выполнять важные
+          задания
+          по разработке соответствующий условий активизации. Разнообразный и богатый опыт начало повседневной работы по
+          формированию позиции обеспечивает широкому кругу (специалистов) участие в формировании новых предложений.
+          Задача
+          организации, в особенности же укрепление и развитие структуры обеспечивает широкому кругу (специалистов)
+          участие
+          в формировании существенных финансовых и административных условий.
+        </p>
+        <p>Повседневная практика показывает, что реализация намеченных плановых заданий позволяет выполнять важные
+          задания
+          по разработке системы обучения кадров, соответствует насущным потребностям. Равным образом сложившаяся
+          структура
+          организации позволяет</p>
+      </div>
+      <div class="section-text__box">
+        <h2 class="section-text__title section-title">Повседневная практика показывает</h2>
+        <p>Разнообразный и богатый опыт рамки и место обучения кадров представляет собой интересный эксперимент проверки
+          форм развития. Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение
+          нашей
+          деятельности обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений
+          развития.
+          Не следует, однако забывать, что укрепление и развитие структуры позволяет оценить значение направлений
+          прогрессивного развития. С другой стороны консультация с широким активом влечет за собой процесс внедрения и
+          модернизации позиций, занимаемых участниками в отношении поставленных задач. Значимость этих проблем настолько
+          очевидна, что постоянный количественный рост и сфера нашей активности в значительной степени обуславливает
+          создание новых предложений.</p>
+      </div>
+      <div class="section-text__box">
+        <h2 class="section-text__title section-title">Реализация намеченных плановых</h2>
+        <p>Равным образом сложившаяся структура организации требуют определения и уточнения системы обучения кадров,
+          соответствует насущным потребностям. Товарищи! консультация с широким активом влечет за собой процесс
+          внедрения
+          и модернизации направлений прогрессивного развития. Идейные соображения высшего порядка, а также постоянный
+          количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке соответствующий
+          условий активизации.
+        </p>
+        <p>Значимость этих проблем настолько очевидна, что новая модель организационной деятельности способствует
+          подготовки и реализации новых предложений. Товарищи! консультация с широким активом влечет за собой процесс
+          внедрения и модернизации модели развития. С другой стороны рамки и место обучения кадров играет важную роль в
+          формировании систем массового участия. Товарищи! новая модель организационной деятельности влечет за собой
+          процесс внедрения и модернизации модели развития.
+        </p>
+        <p> С другой стороны постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания
+          по
+          разработке форм развития. Значимость этих проблем настолько очевидна, что постоянный количественный рост и
+          сфера
+          нашей активности в значительной степени обуславливает создание соответствующий условий активизации. Равным
+          образом реализация намеченных плановых заданий играет важную роль в формировании форм развития.</p>
+      </div>
+    </div>
+
+    <button class="section-text__btn" type="button">Развернуть</button>
+  </div>
+</section>
+    </main>
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <a class="footer__logo logo" href="#">
+        <img src="images/logo-white.svg" alt="Логотип">
+      </a>
+
+      <div class="footer__right">
+        <div class="footer__menu footer-menu">
+          <ul class="footer-menu__list">
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">Про нас</a>
+            </li>
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">Цены</a>
+            </li>
+            <li class="footer-menu__item mt32">
+              <a class="footer-menu__link" href="#">Вход</a>
+            </li>
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">Регистрация</a>
+            </li>
+          </ul>
+          <ul class="footer-menu__list">
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">Блог</a>
+            </li>
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">Контакты</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__contacts contacts">
+          <div class="contacts__mail">
+            <a href="mailto:infosmartsign@smarttender.biz">infosmartsign@smarttender.biz</a>
+            <a href="#">Facebook</a>
+          </div>
+          <div class="contacts__address">
+            <address>
+              пр-т Миколи Бажана, 14 А
+              Київ, 02072
+            </address>
+            <div class="contacts__phones">
+              <a href="tel:0800750643">0 800 750643</a>
+              <a href="tel:380443345643">+380 44 334 56 43</a>
+              <a href="tel:380443388643">+380 44 338 86 43</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a class="footer__scroll-top scroll" href="#" aria-label="Вернуться наверх"></a>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__text">© 2020 Signy</p>
+      <div class="footer__confidentiality">
+        <a href="#">Договор оферты</a>
+        <a href="#">Безопасность сервиса</a>
+      </div>
+    </div>
+  </div>
+</footer>
+  </div>
+
+    <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- jQueryFormStyler -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <!-- FancyBox -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+  <!-- MixitUp JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>
+
+  <!-- Simple Bar Js  -->
+  <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+
+  <!-- JS -->
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>
