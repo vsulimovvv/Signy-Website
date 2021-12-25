@@ -52,6 +52,10 @@
     padding-top: 8px;
     padding-bottom: 8px;
     @include line-clamp(3);
+
+    @include breakpointsMaxW($bp-576) {
+      padding: 12px 0 0 0;
+    }
   }
 
   &__date {

@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
-  const showMenu = () => {
+  (function showMenu() {
     const menuBtn = document.querySelector('.header__toggle');
     const menu = document.querySelector('.mobile-menu');
     const menuCloseBtn = document.querySelector('.mobile-menu__close');
@@ -23,26 +23,43 @@ window.addEventListener('DOMContentLoaded', () => {
       overlay.classList.remove('active');
       body.classList.remove('no-scroll');
     });
-  };
-  showMenu();
+  })();
 
-  const swiper = new Swiper(".hero__slider", {
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  });
+  (function heroSlider() {
+    const swiper = new Swiper(".hero__slider", {
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  })();
 
-  const swiper1 = new Swiper(".partners__slider", {
-    slidesPerView: 4,
-    // grid: {
-    //   rows: 2,
-    // },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  });
+  (function partnersSlider() {
+    const swiper1 = new Swiper(".partners__slider", {
+      slidesPerView: 4,
+      // grid: {
+      //   rows: 2,
+      // },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        310: {
+          slidesPerView: 2,
+          spaceBetween: 50,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 80,
+        },
+        991: {
+          slidesPerView: 4,
+          spaceBetween: 100,
+        }
+      }
+    });
+  })();
 
   const toggleAccordion = (accordionControl, accordionContent, accordion) => {
     const filters = document.querySelectorAll(accordionControl);
@@ -67,15 +84,14 @@ window.addEventListener('DOMContentLoaded', () => {
   toggleAccordion('.faqs-box__top', '.faqs-box__content', '.faqs-box');
   toggleAccordion('.accordion__control', '.accordion__content', '.accordion');
 
-  function mixer() {
+  (function mixer() {
     const mixContent = document.querySelector('.blog-grid__list');
     if (mixContent) {
       const mixer = mixitup('.blog-grid__list');
     }
-  }
-  mixer();
+  })();
 
-  function showMore() {
+  (function showMore() {
     const btn = document.querySelector('.section-text__btn');
     const content = document.querySelector('.section-text__boxes');
     if (content) {
@@ -91,12 +107,10 @@ window.addEventListener('DOMContentLoaded', () => {
         }
       });
     }
-  };
-
-  showMore();
+  })();
 
   //  Modal
-  const modals = () => {
+  (function modals() {
     function bindModal(openBtn, modal, close) {
       const openBtnEl = document.querySelector(openBtn);
       const modalEl = document.querySelector(modal);
@@ -131,8 +145,7 @@ window.addEventListener('DOMContentLoaded', () => {
     };
     // bindModal('.page-about__preview', '.popup--form', '.popup__close');
     // bindModal('.quote__img', '.popup--thanks', '.popup__close');
-  };
-  modals();
+  })();
 
   function scrollHeader() {
     const header = document.querySelector('header');

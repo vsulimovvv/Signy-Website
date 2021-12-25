@@ -29,6 +29,72 @@
 <body>
   <div class="site-wrapper">
     <div class="overlay"></div>
+    <div class="popup popup--form">
+  <div class="popup__container">
+    <button class="popup__close" type="button"></button>
+    <h2 class="popup__title">Демо версия</h2>
+    <div class="popup__text">
+      <p>Заполни форму и наши менеджеры свяжутся с тобой</p>
+    </div>
+
+    <form class="popup__form form-submit">
+      <div class="form-submit__group">
+        <label class="form-submit__label" for="name">Имя*:</label>
+        <input class="form-submit__input" type="text" id="name" name="name" placeholder="Иван" required>
+      </div>
+      <div class="form-submit__group">
+        <label class="form-submit__label" for="mail">Электронная почта*:</label>
+        <input class="form-submit__input" type="email" id="mail" name="mail" placeholder="Иван" required>
+      </div>
+      <div class="form-submit__group">
+        <label class="form-submit__label" for="phone">Телефон*:</label>
+        <input class="form-submit__input" type="tel" id="phone" name="phone" placeholder="Иван" required>
+      </div>
+
+      <button class="form-submit__btn btn" type="submit">Отправить</button>
+    </form>
+  </div>
+</div>
+
+<div class="popup popup--thanks">
+  <div class="popup__container">
+    <button class="popup__close" type="button"></button>
+    <h2 class="popup__title">Спасибо</h2>
+    <div class="popup__text">
+      <p>Твое сообщение отправленно! Наши менеджеры свяжутся с тобой в ближайшее время</p>
+    </div>
+    <div class="popup__img">
+      <svg>
+        <use xlink:href="images/sprite.svg#mail-big"></use>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<div class="popup popup--form">
+  <div class="popup__container">
+    <button class="popup__close" type="button"></button>
+    <h2 class="popup__title">Демо версия</h2>
+    <p class="popup__text">Заполни форму и наши менеджеры свяжутся с тобой</p>
+
+    <form class="popup__form form-submit">
+      <div class="form-submit__group">
+        <label class="form-submit__label" for="name">Имя*:</label>
+        <input class="form-submit__input" type="text" id="name" name="name" placeholder="Иван" required>
+      </div>
+      <div class="form-submit__group">
+        <label class="form-submit__label" for="mail">Электронная почта*:</label>
+        <input class="form-submit__input" type="email" id="mail" name="mail" placeholder="Иван" required>
+      </div>
+      <div class="form-submit__group">
+        <label class="form-submit__label" for="phone">Телефон*:</label>
+        <input class="form-submit__input" type="tel" id="phone" name="phone" placeholder="Иван" required>
+      </div>
+
+      <button class="form-submit__btn btn" type="submit">Отправить</button>
+    </form>
+  </div>
+</div>
     <header class="header">
   <div class="container">
     <nav class="header__wrapper">
@@ -52,7 +118,6 @@
               </ul>
             </div>
           </li>
-
           <li class="menu__item">
             <div class="dropdown" data-dropdown>
               <a class="menu__link menu__link--dropdown" data-dropdown-button href="#">Про нас</a>
@@ -81,7 +146,7 @@
         <div class="menu__tools tools">
           <a class="tools__link btn btn--bordered" href="#">Вход</a>
           <a class="tools__link btn" href="#">Регистрация</a>
-          <select class="select" name="" id="">
+          <select class="select" name="country" id="country">
             <option value="РУС">РУС</option>
             <option value="УКР">УКР</option>
           </select>
@@ -223,15 +288,15 @@
     <h2 class="visually-hidden advantages__title">Преимущества</h2>
     <ul class="advantages__items">
       <li class="advantages__item">
-        <div class="advantages__name">Моментально</div>
+        <h3 class="advantages__name">Моментально</h3>
         <p class="advantages__text">Никаких задержек. 1 секунда на подписание</p>
       </li>
       <li class="advantages__item">
-        <div class="advantages__name">Глобально</div>
+        <h3 class="advantages__name">Глобально</h3>
         <p class="advantages__text">Сервис доступен 24\7 со всех устройств</p>
       </li>
       <li class="advantages__item">
-        <div class="advantages__name">Экономно</div>
+        <h3 class="advantages__name">Экономно</h3>
         <p class="advantages__text">В 30 раз дешевле чем почта и курьеры</p>
       </li>
     </ul>
@@ -328,22 +393,22 @@
     <div class="partners__slider swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="images/content/partners/1.svg" alt="Партнер">
+          <img src="images/content/partners/1.svg" width="176" height="106" alt="Партнер">
         </div>
         <div class="swiper-slide">
-          <img src="images/content/partners/2.svg" alt="Партнер">
+          <img src="images/content/partners/2.svg" width="176" height="106" alt="Партнер">
         </div>
         <div class="swiper-slide">
-          <img src="images/content/partners/3.svg" alt="Партнер">
+          <img src="images/content/partners/3.svg" width="176" height="106" alt="Партнер">
         </div>
         <div class="swiper-slide">
-          <img src="images/content/partners/4.svg" alt="Партнер">
+          <img src="images/content/partners/4.svg" width="176" height="106" alt="Партнер">
         </div>
         <div class="swiper-slide">
-          <img src="images/content/partners/1.svg" alt="Партнер">
+          <img src="images/content/partners/1.svg" width="176" height="106" alt="Партнер">
         </div>
         <div class="swiper-slide">
-          <img src="images/content/partners/2.svg" alt="Партнер">
+          <img src="images/content/partners/2.svg" width="176" height="106" alt="Партнер">
         </div>
       </div>
       <div class="swiper-pagination"></div>
@@ -358,7 +423,7 @@
       <li class="news__item">
         <article class="news-card">
           <div class="news-card__img">
-            <img src="images/content/news/1.jpg" alt="Новость 1">
+            <img src="images/content/news/1.jpg" width="374" height="395" alt="Новость 1">
           </div>
           <div class="news-card__info">
             <time class="news-card__date" datetime="2020-05-28">28.05.2020</time>
@@ -369,7 +434,7 @@
       <li class="news__item">
         <article class="news-card">
           <div class="news-card__img">
-            <img src="images/content/news/1.jpg" alt="Новость 1">
+            <img src="images/content/news/1.jpg" width="374" height="395" alt="Новость 2">
           </div>
           <div class="news-card__info">
             <time class="news-card__date" datetime="2020-05-28">28.05.2020</time>
@@ -380,7 +445,7 @@
       <li class="news__item">
         <article class="news-card">
           <div class="news-card__img">
-            <img src="images/content/news/1.jpg" alt="Новость 1">
+            <img src="images/content/news/1.jpg" width="374" height="395" alt="Новость 3">
           </div>
           <div class="news-card__info">
             <time class="news-card__date" datetime="2020-05-28">28.05.2020</time>
@@ -411,7 +476,7 @@
 
     <div class="faqs__accordions">
       <div class="accordion">
-        <button class="accordion__control" type="button"> Почему после ремонта дорога опять проваливается?</button>
+        <button class="accordion__control" type="button">Почему после ремонта дорога опять проваливается?</button>
         <div class="accordion__content">
           <p class="accodrion__text">
             - Потому что делают ее без соблюдения технологических процессов.
@@ -419,7 +484,7 @@
         </div>
       </div>
       <div class="accordion">
-        <button class="accordion__control" type="button"> Почему после ремонта дорога опять проваливается?</button>
+        <button class="accordion__control" type="button">Почему после ремонта дорога опять проваливается?</button>
         <div class="accordion__content">
           <p class="accodrion__text">
             - Потому что делают ее без соблюдения технологических процессов.
@@ -427,7 +492,7 @@
         </div>
       </div>
       <div class="accordion">
-        <button class="accordion__control" type="button"> Почему вода мокрая?</button>
+        <button class="accordion__control" type="button">Почему вода мокрая?</button>
         <div class="accordion__content">
           <p class="accodrion__text">
             - Потому что делают ее без соблюдения технологических процессов.
@@ -468,7 +533,7 @@
 
     <form class="subscribe__form form" action="/">
       <label class="form__group">
-        <input class="form__input input-access" type="text">
+        <input class="form__input input-access" type="text" type="text" id="subscribe" name="subscribe" required>
       </label>
       <button class="form__btn btn" type="submit">Отправить</button>
     </form>
@@ -533,8 +598,8 @@
     <div class="footer__bottom">
       <p class="footer__text">© 2020 Signy</p>
       <div class="footer__confidentiality">
-        <a href="">Договір оферти</a>
-        <a href="">Безпека сервісу</a>
+        <a href="#">Договор оферты</a>
+        <a href="#">Безопасность сервиса</a>
       </div>
     </div>
   </div>

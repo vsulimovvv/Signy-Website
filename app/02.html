@@ -32,7 +32,9 @@
   <div class="popup__container">
     <button class="popup__close" type="button"></button>
     <h2 class="popup__title">Демо версия</h2>
-    <p class="popup__text">Заполни форму и наши менеджеры свяжутся с тобой</p>
+    <div class="popup__text">
+      <p>Заполни форму и наши менеджеры свяжутся с тобой</p>
+    </div>
 
     <form class="popup__form form-submit">
       <div class="form-submit__group">
@@ -41,11 +43,11 @@
       </div>
       <div class="form-submit__group">
         <label class="form-submit__label" for="mail">Электронная почта*:</label>
-        <input class="form-submit__input" type="text" id="mail" name="mail" placeholder="Иван" required>
+        <input class="form-submit__input" type="email" id="mail" name="mail" placeholder="Иван" required>
       </div>
       <div class="form-submit__group">
         <label class="form-submit__label" for="phone">Телефон*:</label>
-        <input class="form-submit__input" type="text" id="phone" name="phone" placeholder="Иван" required>
+        <input class="form-submit__input" type="tel" id="phone" name="phone" placeholder="Иван" required>
       </div>
 
       <button class="form-submit__btn btn" type="submit">Отправить</button>
@@ -57,14 +59,39 @@
   <div class="popup__container">
     <button class="popup__close" type="button"></button>
     <h2 class="popup__title">Спасибо</h2>
-    <p class="popup__text">Твое сообщение отправленно!
-      Наши менеджеры свяжутся с тобой в ближайшее время</p>
-
+    <div class="popup__text">
+      <p>Твое сообщение отправленно! Наши менеджеры свяжутся с тобой в ближайшее время</p>
+    </div>
     <div class="popup__img">
       <svg>
         <use xlink:href="images/sprite.svg#mail-big"></use>
       </svg>
     </div>
+  </div>
+</div>
+
+<div class="popup popup--form">
+  <div class="popup__container">
+    <button class="popup__close" type="button"></button>
+    <h2 class="popup__title">Демо версия</h2>
+    <p class="popup__text">Заполни форму и наши менеджеры свяжутся с тобой</p>
+
+    <form class="popup__form form-submit">
+      <div class="form-submit__group">
+        <label class="form-submit__label" for="name">Имя*:</label>
+        <input class="form-submit__input" type="text" id="name" name="name" placeholder="Иван" required>
+      </div>
+      <div class="form-submit__group">
+        <label class="form-submit__label" for="mail">Электронная почта*:</label>
+        <input class="form-submit__input" type="email" id="mail" name="mail" placeholder="Иван" required>
+      </div>
+      <div class="form-submit__group">
+        <label class="form-submit__label" for="phone">Телефон*:</label>
+        <input class="form-submit__input" type="tel" id="phone" name="phone" placeholder="Иван" required>
+      </div>
+
+      <button class="form-submit__btn btn" type="submit">Отправить</button>
+    </form>
   </div>
 </div>
     <div class="overlay"></div>
@@ -91,7 +118,6 @@
               </ul>
             </div>
           </li>
-
           <li class="menu__item">
             <div class="dropdown" data-dropdown>
               <a class="menu__link menu__link--dropdown" data-dropdown-button href="#">Про нас</a>
@@ -120,7 +146,7 @@
         <div class="menu__tools tools">
           <a class="tools__link btn btn--bordered" href="#">Вход</a>
           <a class="tools__link btn" href="#">Регистрация</a>
-          <select class="select" name="" id="">
+          <select class="select" name="country" id="country">
             <option value="РУС">РУС</option>
             <option value="УКР">УКР</option>
           </select>
@@ -222,7 +248,7 @@
     <div class="single-blog__wrapper">
       <div class="single-blog-card">
         <div class="single-blog-card__img">
-          <img src="images/content/blog-page/1.jpg" alt="">
+          <img src="images/content/blog-page/1.jpg" width="730" height="422" alt="Интересно пишем про">
         </div>
         <div class="single-blog-card__info">
           <time class="single-blog-card__date date" datetime="2020-05-28">28.05.2020</time>
@@ -250,7 +276,7 @@
               и реализации форм развития.</p>
           </div>
 
-          <button class="single-blog-card__btn">Читать</button>
+          <a class="single-blog-card__btn" href="#">Читать</a>
         </div>
       </div>
     </div>
@@ -281,7 +307,7 @@
           <li class="blog-grid__item mix laws">
             <article class="blog-card">
               <div class="blog-card__img">
-                <img src="images/content/blog-page/blog-card/1.jpg" alt="Блог">
+                <img src="images/content/blog-page/blog-card/1.jpg" width="370" height="370" alt="Блог">
               </div>
               <time class="blog-card__date date" datetime="2020-05-28">05.03.2020</time>
               <h3 class="blog-card__title">
@@ -305,7 +331,7 @@
           <li class="blog-grid__item mix laws">
             <article class="blog-card">
               <div class="blog-card__img">
-                <img src="images/content/blog-page/blog-card/2.jpg" alt="Блог">
+                <img src="images/content/blog-page/blog-card/2.jpg" width="370" height="370" alt="Блог">
               </div>
               <time class="blog-card__date date" datetime="2020-05-28">28.05.2020</time>
               <h3 class="blog-card__title">
@@ -329,7 +355,7 @@
           <li class="blog-grid__item mix education">
             <article class="blog-card">
               <div class="blog-card__img">
-                <img src="images/content/blog-page/blog-card/3.jpg" alt="Блог">
+                <img src="images/content/blog-page/blog-card/3.jpg" width="370" height="370" alt="Блог">
               </div>
               <time class="blog-card__date date" datetime="2020-05-28">28.05.2020</time>
               <h3 class="blog-card__title">
@@ -353,7 +379,7 @@
           <li class="blog-grid__item mix laws">
             <article class="blog-card">
               <div class="blog-card__img">
-                <img src="images/content/blog-page/blog-card/1.jpg" alt="Блог">
+                <img src="images/content/blog-page/blog-card/1.jpg" width="370" height="370" alt="Блог">
               </div>
               <time class="blog-card__date date" datetime="2020-05-28">05.03.2020</time>
               <h3 class="blog-card__title">
@@ -377,7 +403,7 @@
           <li class="blog-grid__item mix laws">
             <article class="blog-card">
               <div class="blog-card__img">
-                <img src="images/content/blog-page/blog-card/2.jpg" alt="Блог">
+                <img src="images/content/blog-page/blog-card/2.jpg" width="370" height="370" alt="Блог">
               </div>
               <time class="blog-card__date date" datetime="2020-05-28">28.05.2020</time>
               <h3 class="blog-card__title">
@@ -401,7 +427,7 @@
           <li class="blog-grid__item mix education">
             <article class="blog-card">
               <div class="blog-card__img">
-                <img src="images/content/blog-page/blog-card/3.jpg" alt="Блог">
+                <img src="images/content/blog-page/blog-card/3.jpg" width="370" height="370" alt="Блог">
               </div>
               <time class="blog-card__date date" datetime="2020-05-28">28.05.2020</time>
               <h3 class="blog-card__title">
@@ -425,7 +451,7 @@
           <li class="blog-grid__item mix laws">
             <article class="blog-card">
               <div class="blog-card__img">
-                <img src="images/content/blog-page/blog-card/1.jpg" alt="Блог">
+                <img src="images/content/blog-page/blog-card/1.jpg" width="370" height="370" alt="Блог">
               </div>
               <time class="blog-card__date date" datetime="2020-05-28">05.03.2020</time>
               <h3 class="blog-card__title">
@@ -449,7 +475,7 @@
           <li class="blog-grid__item mix laws">
             <article class="blog-card">
               <div class="blog-card__img">
-                <img src="images/content/blog-page/blog-card/2.jpg" alt="Блог">
+                <img src="images/content/blog-page/blog-card/2.jpg" width="370" height="370" alt="Блог">
               </div>
               <time class="blog-card__date date" datetime="2020-05-28">28.05.2020</time>
               <h3 class="blog-card__title">
@@ -473,7 +499,7 @@
           <li class="blog-grid__item mix education">
             <article class="blog-card">
               <div class="blog-card__img">
-                <img src="images/content/blog-page/blog-card/3.jpg" alt="Блог">
+                <img src="images/content/blog-page/blog-card/3.jpg" width="370" height="370" alt="Блог">
               </div>
               <time class="blog-card__date date" datetime="2020-05-28">28.05.2020</time>
               <h3 class="blog-card__title">
@@ -531,7 +557,7 @@
 
     <form class="subscribe__form form" action="/">
       <label class="form__group">
-        <input class="form__input input-access" type="text">
+        <input class="form__input input-access" type="text" id="subscribe" name="subscribe" required>
       </label>
       <button class="form__btn btn" type="submit">Отправить</button>
     </form>
@@ -661,8 +687,8 @@
     <div class="footer__bottom">
       <p class="footer__text">© 2020 Signy</p>
       <div class="footer__confidentiality">
-        <a href="">Договір оферти</a>
-        <a href="">Безпека сервісу</a>
+        <a href="#">Договор оферты</a>
+        <a href="#">Безопасность сервиса</a>
       </div>
     </div>
   </div>

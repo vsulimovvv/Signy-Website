@@ -51,6 +51,10 @@
     @include breakpointsMaxW($bp-768 - 1px) {
       margin-left: 0;
     }
+
+    @include breakpointsMaxW($bp-768 - 1px) {
+      margin-bottom: 30px;
+    }
   }
 
   &__scroll-top {
@@ -86,17 +90,17 @@
   }
 
   &__bottom {
-    max-width: 550px;
+    max-width: 580px;
     width: 100%;
     display: grid;
-    grid-template-columns: 100px 240px;
+    grid-template-columns: 100px 280px;
     gap: 185px;
     color: rgba(255, 255, 255, 0.4);
     font-size: 12px;
     line-height: 24px;
 
     @include breakpointsMaxW($bp-container) {
-      gap: calc(88px + (185 - 88) * ((100vw - 768px) / (1260 - 768)));
+      gap: calc(10px + (185 - 10) * ((100vw - 320px) / (1260 - 320)));
     }
 
     @include breakpointsMaxW($bp-576) {
@@ -108,6 +112,7 @@
     display: flex;
     justify-content: space-between;
     gap: 50px;
+    width: 100%;
 
     a {
       transition: 150ms ease;
@@ -120,6 +125,8 @@
 
     @include breakpointsMaxW($bp-576) {
       order: -1;
+      flex-direction: column;
+      gap: 10px;
     }
   }
 

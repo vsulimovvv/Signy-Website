@@ -21,6 +21,8 @@
     @include breakpointsMaxW($bp-991) {
       font-size: 56px;
       margin-bottom: 5px;
+
+      font-size: calc(36px + (56 - 36) * ((100vw - 320px) / (1260 - 320)));
     }
   }
 
@@ -35,6 +37,7 @@
       font-size: 36px;
       line-height: 1;
       margin-bottom: 10px;
+      font-size: calc(20px + (36 - 20) * ((100vw - 320px) / (1260 - 320)));
     }
   }
 
@@ -43,6 +46,7 @@
 
     @include breakpointsMaxW($bp-991) {
       line-height: 22px;
+      font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1260 - 320)));
     }
   }
 }
