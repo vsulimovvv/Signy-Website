@@ -73,6 +73,14 @@ html {
   scroll-behavior: smooth;
 }
 
+input,
+a,
+button,
+select,
+textarea {
+  outline: transparent;
+}
+
 button {
   padding: 0;
   border: none;

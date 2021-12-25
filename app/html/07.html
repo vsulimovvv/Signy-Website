@@ -9,10 +9,11 @@
 </head>
 
 <body>
-  <div class="site-wrapper">      
+  <div class="site-wrapper">
     @include('./components/popups/_popup.html')
 
-    <!-- @include('./components/_header.html') -->
+    <div class="overlay"></div>
+    @include('./components/_header.html')
     <main class="main">
       @include('./components/_page-about.html')
       @include('./components/_section-partners.html')

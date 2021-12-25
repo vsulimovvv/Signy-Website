@@ -19,16 +19,28 @@
 
   &__control {
     padding-left: 35px;
-    position: relative;
-    cursor: pointer;
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
-
+    position: relative;
     margin-bottom: 6px;
+    transition: 150ms ease;
 
     h3 {
       font-weight: 400;
+    }
+
+    &:focus {
+      outline: 1px solid var(--color-blue);
+    }
+
+    &:hover {
+      background-color: #c0d4e5;
+    }
+
+    &:active {
+      outline: 1px solid var(--color-blue);
+      background-color: var(--color-white);
     }
 
     @include breakpointsMaxW($bp-576) {

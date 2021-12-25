@@ -26,8 +26,6 @@ window.addEventListener('DOMContentLoaded', () => {
   };
   showMenu();
 
-
-
   const swiper = new Swiper(".hero__slider", {
     pagination: {
       el: ".swiper-pagination",
@@ -131,15 +129,15 @@ window.addEventListener('DOMContentLoaded', () => {
         })
       };
     };
-    bindModal('.page-about__preview', '.popup--form', '.popup__close');
-    bindModal('.quote__img', '.popup--thanks', '.popup__close');
+    // bindModal('.page-about__preview', '.popup--form', '.popup__close');
+    // bindModal('.quote__img', '.popup--thanks', '.popup__close');
   };
   modals();
 
   function scrollHeader() {
     const header = document.querySelector('header');
 
-    if (this.scrollY >= 50) {
+    if (this.scrollY >= 10) {
       header.classList.add('scroll-header');
     } else {
       header.classList.remove('scroll-header');

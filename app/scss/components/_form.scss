@@ -27,6 +27,20 @@
     height: 100%;
     padding: 12px 30px;
     background-color: var(--color-white);
+    transition: 150ms ease;
+
+    &:focus {
+      box-shadow: 0 0 0 2px var(--color-blue);
+    }
+
+    &:hover {
+      background-color: rgba(16, 100, 229, 0.1);
+    }
+
+    &:active {
+      box-shadow: 0 0 0 1px var(--color-blue);
+      background-color: rgba(16, 100, 229, 0.1);
+    }
   }
 
   &__btn {

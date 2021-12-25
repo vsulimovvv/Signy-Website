@@ -109,6 +109,15 @@
     justify-content: space-between;
     gap: 50px;
 
+    a {
+      transition: 150ms ease;
+      color: rgba(255, 255, 255, 0.4);
+
+      &:hover {
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+
     @include breakpointsMaxW($bp-576) {
       order: -1;
     }
